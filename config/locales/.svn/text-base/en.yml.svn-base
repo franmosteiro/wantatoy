@@ -1,0 +1,14 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+    recommended_ages:
+        '0-6': '0-6 MONTHS'
+        '7-12': '7-12 MONTHS'
+        '13-18': '13-18 MONTHS'
+        '19-24': '19-24 MONTHS'
+        '2-3': '2-3 YEARS'
+        '4-5': '4-5 YEARS'
+        '6-8': '6-8 YEARS'
+        '9-11': '9-11 YEARS'
+        '+12': '+12-18 YEARS'

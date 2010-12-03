@@ -1,0 +1,69 @@
+<script>
+$(document).ready(function () {
+  init();
+
+  function init(){
+    //$('#latest_toys').hide();
+	$('ol.galleries li div.gallery-img').hover(
+		function () {
+				$(this).find('a.gallery-over').stop().fadeTo('fast', 1);
+				$(this).find('div.gallery-shot').stop().fadeTo('fast', 1);
+				$(this).find('img').stop().fadeTo('fast', 0.3);
+			},
+		function () {
+				$(this).find('a.gallery-over').stop().fadeTo('fast', 0);
+				$(this).find('div.gallery-shot').stop().fadeTo('fast', 0);
+				$(this).find('img').stop().fadeTo('fast', 1);
+			}
+		);
+	}
+});
+</script>
+
+<div id="show_what" class="grid_4 cell_4">
+	<h3>¿Qué es?<br/></h3>
+	<span class="lucida">Les damos una nueva oportunidad a esos juguetes olvidados que rondan por vuestras casas.</span>
+</div>
+<div id="show_how" class="grid_4 cell_4">
+	<h3>¿Cómo funciona?<br/></h3>
+	<span class="lucida">Wantatoy es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!</span>
+</div>
+<div id="show_all" class="grid_4 cell_4 show">
+	<h3><%= link_to "Ver los juguetes", {:controller =>"toys", :action => "index"} %> »<br/></h3>
+	<span class="lucida">Échale un vistazo a la galería ... </span>
+</div>
+<div id="show_create" class="grid_4 cell_4 show">
+	<h3><%= link_to "¡Comparte uno!", {:controller =>"toys", :action => "new"} %> »<br/></h3>
+	<span class="lucida">¡ Comparte y disfruta !</span>
+</div>
+<div class="clear"></div>
+
+<%if (@toys.size == 0)%>
+<div class="grid_16">
+	<h2 id="page-heading">Todavía nadie se ha animado a regalar ningún juguete. Anímate y se tu el primero 
+	en <%= link_to 'regalar', new_toy_path %> uno de tu juguetes.</h2>
+</div>
+<%else%>
+<div class="grid_16">
+	<div id="main">
+		<ol class="galleries group">
+		<% @toys.each_with_index do |toy,index| %>
+			<li class="group">
+				<div class="gallery">
+					<div class="gallery-shot">
+						<div class="gallery-img">
+							<%= link_to image_tag(toy.thumb.url(:medium)), toy, {:class => "gallery-link"} %>
+							<%= link_to toy, {:class => "gallery-over"} do  %>
+								<strong><%= toy.title %></strong>
+								<span class="dim"><%=t toy.recommended_age.to_s, :scope => :recommended_ages %></span>
+							<%end%>
+						</div>
+					</div>
+				</div>
+			</li>
+		<%end%>
+		</ol>
+	</div>
+</div>
+<div class="clear"></div>
+<%end%>

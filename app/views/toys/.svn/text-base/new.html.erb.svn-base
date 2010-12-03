@@ -1,0 +1,9 @@
+<div class="grid_16">
+	<h2>Por favor rellena la ficha con la información del juguete que quieres regalar.<br/>Es fácil y no te costará nada.</h2>
+</div>
+<div class="clear"></div>
+<div class="grid_8 suffix_8">
+<%= render 'form' %>
+</div>
+<div class="clear"></div>
+

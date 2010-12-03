@@ -1,0 +1,22 @@
+<div class="grid_16" id="toy_info">
+<div class="grid_8 alpha">
+	<%= image_tag @toy.thumb.url(:large) %>	
+</div>
+<div class="grid_8 omega">
+	<div id="notice" style="background:green;"><%= notice %></div>
+	<h2><%= @toy.title %></h2>
+	<h2><%= @toy.description %></h2>
+  	<h2><%= @toy.contact %></h2>
+	<h2><%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
+</div>	
+<div class="clear"></div>
+</div>	
+<div class="clear"></div>
+<% @rest_toys.each_with_index do |toy,index| %>
+<div class="grid_2">
+	<div class="thumbnail">
+	<%= link_to image_tag(toy.thumb.url(:small)), toy %>
+	</div>
+</div>
+<%if ((index+1)%8 == 0)%><div class="clear"></div><%end%>
+<%end%>

@@ -1,6 +1,6 @@
 class Toy < ActiveRecord::Base
       
-  has_attached_file :thumb, :styles => { :large => ["460x460!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
+  has_attached_file :thumb, :styles => { :large => ["438x438!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
   
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
@@ -10,7 +10,7 @@ class Toy < ActiveRecord::Base
   
   #Para paginar, definimos resultados/pagina
   def self.per_page
-      8
+      12
   end
     
   def self.search(title, recommended_age, page)

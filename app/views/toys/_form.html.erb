@@ -1,6 +1,6 @@
 <% form_for @toy, :html => { :multipart => true } do |f| %>
 
-  	<% if @toy.errors.any? %>
+	<% if @toy.errors.any? %>
     <div id="error_explanation">
     	<ul>
       	<% @toy.errors.full_messages.each do |msg| %>
@@ -11,20 +11,16 @@
 	<% end %>
 	
 	<p>
-    <%= f.label t :title, :scope => [:activerecord, :models, :toy]%>
+    <%= f.label 'Nombre del juguete'%>
     <%= f.text_field :title, :maxlength => 40, :class=>"input large" %>
 	</p>
 	<p>
     <%= f.label "Descripción del juguete" %>
-    <%= f.text_area :description, :cols => 50, :rows => 5, :class => "styled_textarea wysiwyg" %>
+    <%= f.text_area :description, :cols => 50, :rows => 7, :class => "styled_textarea" %>
 	</p>	
 	<p>
-	<%= f.label "Imagen" %>
-	<%= f.file_field :thumb %>
-	</p>
-	<p>
 	<%= f.label "Edad recomendada"%>
-	<%= f.select :recommended_age, "<option value=\"0\">Selecciona una opción</option>" + 
+	<%= f.select :recommended_age, "<option value=\"0\">Por favor selecciona una opción</option>" + 
 		"<option value=\"0-6\">#{t '0-6', :scope => :recommended_ages }</option>" + 
 		"<option value=\"7-12\">#{t '7-12', :scope => :recommended_ages }</option>" + 
 		"<option value=\"13-18\">#{t '13-18', :scope => :recommended_ages }</option>" + 
@@ -37,7 +33,11 @@
 	</p>
 	<p>
     <%= f.label "Contacto" %>
-    <%= f.text_field :contact, :maxlength => 40, :class=>"input medium" %>
+    <%= f.text_field :contact, :maxlength => 40, :class=>"input large" %>
+	</p>
+	<p>
+	<%= f.label "Imagen" %>
+	<%= f.file_field :thumb %>
 	</p>	
 	<p>
     <%= f.submit :class => "button" %>

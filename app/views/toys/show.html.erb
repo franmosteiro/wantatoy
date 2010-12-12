@@ -1,22 +1,36 @@
-<div class="grid_16" id="toy_info">
-<div class="grid_8 alpha">
-	<%= image_tag @toy.thumb.url(:large) %>	
-</div>
-<div class="grid_8 omega">
-	<div id="notice" style="background:green;"><%= notice %></div>
-	<h2><%= @toy.title %></h2>
-	<h2><%= @toy.description %></h2>
-  	<h2><%= @toy.contact %></h2>
-	<h2><%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
+<div id="toy_detail">
+	<div class="container_16">
+		<div class="grid_8">
+			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
+		</div>
+		<div class="grid_8">
+			<%if (notice != nil)%><span id="notice"><%= notice %></span><%end%>
+			<h1><%= @toy.title %></h1>
+			<h2>Edad recomendada <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
+			<p><%= @toy.description %></p>
+  			<p><%= @toy.contact %></p>
+			<%= link_to 'Volver', toys_path%>
+		</div>	
+		<div class="clear"></div>
+	</div>
 </div>	
-<div class="clear"></div>
-</div>	
-<div class="clear"></div>
-<% @rest_toys.each_with_index do |toy,index| %>
-<div class="grid_2">
-	<div class="thumbnail">
-	<%= link_to image_tag(toy.thumb.url(:small)), toy %>
+<div id="other_toys">
+	<div class="container_16">
+		<%if (@rest_toys.size > 0)%>
+		<div class="grid_16"><h5>Otros juguetes del mismo usuario</h5></div>
+		<div class="clear"></div>
+		<% @rest_toys.each_with_index do |toy,index| %>
+		<%if ((@rest_toys.size == index + 1) and ((index+1)%8 != 0))%>
+		<div class="grid_2 suffix_<%=16-(((index+1)%8)*2)%>">
+		<%else%>
+		<div class="grid_2">
+		<%end%>
+			<div class="borderboxmini">
+			<%= link_to image_tag(toy.thumb.url(:small)), toy %>
+			</div>
+		</div>
+		<%if (@rest_toys.size == index + 1)%><div class="clear"></div><%end%>
+		<%end%>
+		<%end%>		
 	</div>
 </div>
-<%if ((index+1)%8 == 0)%><div class="clear"></div><%end%>
-<%end%>

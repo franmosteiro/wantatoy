@@ -16,7 +16,7 @@ class ToysController < ApplicationController
   # GET /toys/1
   # GET /toys/1.xml
   def show
-    @toy = Toy.find(params[:id])
+    @toy = Toy.find(params[:id])    
     @rest_toys = Toy.where(:contact => @toy.contact).reject{|toy| toy.id == @toy.id}
     respond_to do |format|
       format.html # show.html.erb
@@ -55,7 +55,7 @@ class ToysController < ApplicationController
           client.update("#{@toy.title} http://#{request.host}:#{unless request.port == 80 then request.port end}#{request.path}/#{@toy.id} #wantatoy")
         end
                         
-        format.html { redirect_to @toy, :action => 'index', :notice => 'Gracias por publicar tu juguete ;)' }
+        format.html { redirect_to @toy, :notice => 'Muchas gracias por tu juguete ;)' }
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
       else
         format.html { render :action => "new" }

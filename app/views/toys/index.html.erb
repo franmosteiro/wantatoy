@@ -1,62 +1,108 @@
-<div class="grid_16">
-  <h2 id="page-heading" style="text-align:center;">
-    <form action="/toys" method="get">
-        ¿Que estás buscando? <%= text_field_tag :title, params[:title], :maxlength => 40, :class=>"input medium" %>
-    </form>
-  </h2>
-</div>
-<div class="clear"></div>
-<div class="prefix_3 grid_1">
-	<%= link_to "#{t '0-6', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "0-6", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '7-12', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "7-12", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '13-18', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "13-18", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '19-24', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "19-24", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '2-3', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "2-3", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '4-5', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "4-5", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '6-8', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "6-8", :title => params[:title]%>
-</div>
-<div class="grid_1">
-	<%= link_to "#{t '9-11', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "9-11", :title => params[:title]%>
-</div>
-<div class="grid_1 suffix_4">
-	<%= link_to "#{t '+12', :scope => :recommended_ages }", :controller =>"toys", :action => "index", :recommended_age => "+12", :title => params[:title]%>
-</div>
-<div class="clear"></div>
-
-<%if (@toys.size == 0)%>
-  <div class="grid_16">
-    <h2 id="page-heading">No se ha encontrado ningún juguete. ¿Quieres animarte y <%= link_to 'regalar', new_toy_path %> uno de tu juguetes?</h2>
-  </div>
-  <div class="clear"></div>
-<%else%>
-  <div class="grid_16"><%= will_paginate @toys %></div>
-  <div class="clear"></div>
-    <% @toys.each_with_index do |toy,index| %>
-      <%if ((@toys.size == index + 1) and ((index+1)%4 != 0))%>
-        <div class="grid_4 suffix_<%=(4-((index+1)%4))*4%>">
-      <%else%>
-        <div class="grid_4">
-      <%end%>
-          <div class="box">
-            <h2><%= toy.title %></h2>
-            <div class="block">
-              <p><%= link_to image_tag(toy.thumb.url(:medium)), toy %></p>
-            </div>
-          </div>
-        </div>
-        <%if ((index+1)%4 == 0)%><div class="clear"></div><%end%>
-        <%end%>
-  <div class="clear"></div>
-<%end%>
+<script>
+$(document).ready(function () {
+  init();
+  function init(){
+	$('div.thumb').hover(
+		function () {
+				$(this).find('a.gallery-over').stop().fadeTo('fast', 1);
+				$(this).find('div.box').stop().fadeTo('fast', 1);
+				$(this).find('img').stop().fadeTo('fast', 0.3);
+			},
+		function () {
+				$(this).find('a.gallery-over').stop().fadeTo('fast', 0);
+				$(this).find('div.box').stop().fadeTo('fast', 0);
+				$(this).find('img').stop().fadeTo('fast', 1);
+			}
+		);
+	}
+});
+</script>
+<div id="searchfilter">
+	<div class="container_16">
+		<div class="grid_12"><h1>¿Que estás buscando?</h1></div>
+		<div class="grid_4">
+			<div id="search">
+				<form action="<%= request.path%>" id="searchform" method="get">
+					<div>
+						<%= text_field_tag :title, params[:title], :maxlength => 40, :class=>"rounded" %>
+						<input type="submit" value="." id="searchsubmit" class="button ie6fix"/>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_16">
+			<cat>
+				<ul>
+					<li><h6>Por edades&nbsp;</h6></li>
+					<li><%= link_to "#{t '0-6', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "0-6", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '0-6') then 'round current' end}"}%>
+					</li>
+					<li><a href="#"><%= link_to "#{t '7-12', :scope => :recommended_ages }", {:controller =>"toys",
+							:action => "index", :recommended_age => "7-12", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '7-12') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '13-18', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "13-18", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '13-18') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '19-24', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "19-24", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '19-24') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '2-3', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "2-3", :title => params[:title]}, 
+							{:class => "#{if (params[:recommended_age] == '2-3') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '4-5', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "4-5", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '4-5') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '6-8', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "6-8", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '6-8') then 'round current' end}"}%></a>
+					</li>					
+					<li><a href="#"><%= link_to "#{t '9-11', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "9-11", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '9-11') then 'round current' end}"}%></a>
+					</li>
+					<li><a href="#"><%= link_to "#{t '+12', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "+12", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '+12') then 'round current' end}"}%></a>
+					</li>										
+				</ul>
+			</cat>
+		</div>
+		<div class="clear"></div>		
+	</div>
+</div>	
+<div id="grid">
+	<div class="container_16">
+	<% if (@toys.size == 0)%>
+	<div class="grid_16"><h1>Lo sentimos mucho, pero no se han encontrado juguetes :(</h1></div>
+	<div class="clear"></div>
+	<%else%>
+	<% @toys.each_with_index do |toy,index| %>
+		<%if ((@toys.size == index + 1) and ((index+1)%4 != 0))%>
+	    <div class="grid_4 suffix_<%=(4-((index+1)%4))*4%>">
+	    <%else%>
+	    <div class="grid_4">
+	    <%end%>
+	    	<div class="box">
+	        	<div class="thumb">
+	              <%= link_to image_tag(toy.thumb.url(:medium)), toy %>
+				  <%= link_to toy, {:class => "gallery-over"} do  %>
+				  	<strong><%= toy.title %></strong>
+					<span class="dim"><%=t toy.recommended_age.to_s, :scope => :recommended_ages %></span>
+				  <%end%>
+	            </div>
+	        </div>
+	    </div>
+	    <%if (@toys.size == index + 1)%><div class="clear"></div><%end%>
+	<%end%>
+	<%end%>
+	<div class="grid_16"><%= will_paginate @toys %></div>
+	<div class="clear"></div>	
+	</div>
+</div>	

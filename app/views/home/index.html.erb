@@ -44,8 +44,10 @@ $(document).ready(function () {
 </div>
 <div id="grid">
 	<div class="container_16">
+	<%if (@toys.size > 0)%>
 	<div class="grid_16"><h1>Últimos juguetes añadidos ...</h1></div>
 	<div class="clear"></div>
+	<%end%>
 	<% @toys.each_with_index do |toy,index| %>
 		<%if ((@toys.size == index + 1) and ((index+1)%4 != 0))%>
     	<div class="grid_4 suffix_<%=(4-((index+1)%4))*4%>">

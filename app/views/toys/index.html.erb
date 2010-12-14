@@ -19,7 +19,7 @@ $(document).ready(function () {
 </script>
 <div id="searchfilter">
 	<div class="container_16">
-		<div class="grid_12"><h1>¿Que estás buscando?</h1></div>
+		<div class="grid_12"><h1><%= t 'searching_for'%></h1></div>
 		<div class="grid_4">
 			<div id="search">
 				<form action="<%= request.path%>" id="searchform" method="get">
@@ -80,7 +80,7 @@ $(document).ready(function () {
 <div id="grid">
 	<div class="container_16">
 	<% if (@toys.size == 0)%>
-	<div class="grid_16"><h1>Lo sentimos mucho, pero no se han encontrado juguetes :(</h1></div>
+	<div class="grid_16"><h1><%= t 'no_toy_found'%></h1></div>
 	<div class="clear"></div>
 	<%else%>
 	<% @toys.each_with_index do |toy,index| %>

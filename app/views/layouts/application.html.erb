@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>wantatoy queremos jugar más</title>
+    <title><%= t 'title'%></title>
     <%= stylesheet_link_tag("reset")%>
     <%= stylesheet_link_tag("text")%>
     <%= stylesheet_link_tag("960")%>
@@ -14,25 +14,26 @@
 <div id="container">	
 	
 	<div id="header">
-	<div class="container_16">
+		<div class="container_16">
 		<div class="prefix_8 grid_8">
 			<nav>
 			<ul>				  
-				<li><%= link_to 'Inicio', {:controller => 'home'}, {:class => "#{if (params[:controller] == 'home') then 'current' end}"}%>
+				<li><%= link_to t('menu.home'), {:controller => 'home'},
+						{:class => "#{if (params[:controller] == 'home') then 'current' end}"}%>
 				</li>
 				<li>
-					<%= link_to 'Ver juguetes', toys_path, 
+					<%= link_to t('menu.toys'), toys_path, 
 						{:class => "#{if (params[:controller] == 'toys' and params[:action] != 'new' and params[:action] != 'create') then 'current' end}"} %>
 				</li>
 				<li>
-					<%= link_to 'Añadir juguete', new_toy_path, 
-					{:class => "#{if (params[:controller] == 'toys' and (params[:action] == 'new' or params[:action] == 'create')) then 'current' end}"} %>
+					<%= link_to t('menu.new_toy'), new_toy_path, 
+						{:class => "#{if (params[:controller] == 'toys' and (params[:action] == 'new' or params[:action] == 'create')) then 'current' end}"} %>
 				</li>
 			</ul>
 			</nav>
 		</div>
 		<div class="clear"></div>
-	</div>	
+		</div>	
 	</div>
 	
 	<div id="content">
@@ -41,7 +42,7 @@
 	
 	<div id="footer">
 		<div class="container_16">
-			<div class="grid_15"><p>&lt;2011 Wantatoy Team&gt; puedes seguirnos en</p></div>
+			<div class="grid_15"><p><%= t 'footer.message'%></p></div>
 			<div class="grid_1">
 				<div id="twitter"><a href="http://www.twitter.com/wantatoy" target="_blank"><%= image_tag "twitter-icon.png"%></a></div>
 			</div>		

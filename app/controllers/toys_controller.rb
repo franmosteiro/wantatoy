@@ -55,7 +55,7 @@ class ToysController < ApplicationController
           client.update("#{@toy.title} http://#{request.host}:#{unless request.port == 80 then request.port end}#{request.path}/#{@toy.id} #wantatoy")
         end
                         
-        format.html { redirect_to @toy, :notice => 'Muchas gracias por tu juguete ;)' }
+        format.html { redirect_to @toy, :notice => t('notice.new_toy_added') }
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
       else
         format.html { render :action => "new" }

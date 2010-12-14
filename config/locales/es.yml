@@ -1,30 +1,30 @@
 es:        
-    recommended_ages:
-        '0-6': '0-6 meses'
-        '7-12': '7-12 meses'
-        '13-18': '13-18 meses'
-        '19-24': '19-24 meses'
-        '2-3': '2-3 años'
-        '4-5': '4-5 años'
-        '6-8': '6-8 años'
-        '9-11': '9-11 años'
-        '+12': '+12 años'
+    title: Wantatoy - Juguetes para jugar
+    
+    menu:
+        home: Inicio
+        toys: Ver los juguetes
+        new_toy: Comparte uno
+    
+    highlight:
+        headline: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
+        article:
+            what: ¿Qué es?
+            what_description: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
             
-    activerecord:
-        attributes:
-            toy:
-                title: "Título del juguete"
-        errors:
-            models:
-                toy:
-                    attributes:
-                        title:
-                            blank: "Debes indicar un nombre para el juguete"
-                        description:
-                            blank: "Añade una descripción del juguete que quieres regalar (estado del mismo, características, etc.)"
-                        thumb_file_name:
-                            blank: "Añade una foto para que sea más fácil ver de que se trata"
-                        contact:
-                            blank: "Debes indicar una forma de contacto"
-                        recommended_age:
-                            inclusion: "Por favor, indica la edad recomendada para el juguete"                            
+            how: ¿Cómo funciona?
+            how_description: Wantatoy es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
+            
+            toys: Ver los juguetes
+            toys_description: Échale un vistazo a la galería ... 
+            
+            new_toy: ¡Comparte uno!
+            new_toy_description: ¡ Comparte y disfruta !
+    
+    footer:
+        message: 2011 Wantatoy Team puedes seguirnos en 
+        
+    last_toys: Últimos juguetes añadidos ...
+        
+    notice: # Mensajes de confirmación (notice) utilizados en los redirect    
+        new_toy_added: Muchas gracias por tu juguete

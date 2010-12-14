@@ -158,11 +158,15 @@ position:absolute;
 }
 
 /* * * Validation messages * * */
-#error_explanation{
+div#error_explanation{
+padding:10px 0 0 0;	
 color:#109DD8;
 }
-#error_explanation ul li{
+div#error_explanation ul li{
+font-size:1.2em;	
 list-style-type: none;	
+padding:0;
+margin:0;
 }
 
 /* * * Search form * * */

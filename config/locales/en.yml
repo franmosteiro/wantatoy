@@ -1,14 +1,58 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-es:
+en:        
+    title: Wantatoy - Juguetes para jugar
+    
+    menu:
+        home: Inicio
+        toys: Ver los juguetes
+        new_toy: Comparte uno
+    
+    highlight:
+        headline: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
+        article:
+            what: ¿Qué es?
+            what_description: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
+            
+            how: ¿Cómo funciona?
+            how_description: Wantatoy es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
+            
+            toys: Ver los juguetes
+            toys_description: Échale un vistazo a la galería ... 
+            
+            new_toy: ¡Comparte uno!
+            new_toy_description: ¡ Comparte y disfruta !
+    
+    footer:
+        message: 2011 Wantatoy Team puedes seguirnos en 
+        
+    last_toys: Últimos juguetes añadidos ...
+    searching_for: ¿Que estás buscando?
+    no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
+    other_toys: Otros juguetes del mismo usuario
+    fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar. Es fácil y no te costará nada.
+    
+    toy_title: Nombre del juguete
+    toy_description: Descripción del juguete
+    toy_recommended_age: Edad recomendada
+    toy_contact: Contacto
+    toy_image: Imagen
+    
+    link_back: Volver
+    
+    button_ok: Aceptar        
+    
     recommended_ages:
-        '0-6': '0-6 MONTHS'
-        '7-12': '7-12 MONTHS'
-        '13-18': '13-18 MONTHS'
-        '19-24': '19-24 MONTHS'
-        '2-3': '2-3 YEARS'
-        '4-5': '4-5 YEARS'
-        '6-8': '6-8 YEARS'
-        '9-11': '9-11 YEARS'
-        '+12': '+12-18 YEARS'
+        '0-6': '0-6 Meses'
+        '7-12': '7-12 Meses'
+        '13-18': '13-18 Meses'
+        '19-24': '19-24 Meses'
+        '2-3': '2-3 Años'
+        '4-5': '4-5 Años'
+        '6-8': '6-8 Años'
+        '9-11': '9-11 Años'
+        '+12': '+12 Años'    
+        
+    notice: # Mensajes de confirmación (notice) utilizados en los redirect    
+        new_toy_added: Muchas gracias por tu juguete

@@ -9,7 +9,7 @@
 			<h2>Edad recomendada <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
 			<p><%= @toy.description %></p>
   			<p><%= @toy.contact %></p>
-			<%= link_to 'Volver', toys_path%>
+			<%= link_to t('link_back'), toys_path%>
 		</div>	
 		<div class="clear"></div>
 	</div>
@@ -17,7 +17,7 @@
 <div id="other_toys">
 	<div class="container_16">
 		<%if (@rest_toys.size > 0)%>
-		<div class="grid_16"><h5>Otros juguetes del mismo usuario</h5></div>
+		<div class="grid_16"><h5><%= t 'other_toys'%></h5></div>
 		<div class="clear"></div>
 		<% @rest_toys.each_with_index do |toy,index| %>
 		<%if ((@rest_toys.size == index + 1) and ((index+1)%8 != 0))%>

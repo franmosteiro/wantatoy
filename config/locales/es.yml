@@ -27,6 +27,18 @@ es:
     last_toys: Últimos juguetes añadidos ...
     searching_for: ¿Que estás buscando?
     no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
+    other_toys: Otros juguetes del mismo usuario
+    fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar. Es fácil y no te costará nada.
+    
+    toy_title: Nombre del juguete
+    toy_description: Descripción del juguete
+    toy_recommended_age: Edad recomendada
+    toy_contact: Contacto
+    toy_image: Imagen
+    
+    link_back: Volver
+    
+    button_ok: Aceptar        
     
     recommended_ages:
         '0-6': '0-6 Meses'

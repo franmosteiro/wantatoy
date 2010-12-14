@@ -11,15 +11,15 @@
 	<% end %>
 	
 	<p>
-    <%= f.label 'Nombre del juguete'%>
+    <%= f.label t 'toy_title' %>
     <%= f.text_field :title, :maxlength => 40, :class=>"input large" %>
 	</p>
 	<p>
-    <%= f.label "Descripción del juguete" %>
+    <%= f.label t 'toy_description' %>
     <%= f.text_area :description, :cols => 50, :rows => 7, :class => "styled_textarea" %>
 	</p>	
 	<p>
-	<%= f.label "Edad recomendada"%>
+	<%= f.label t 'toy_recommended_age' %>
 	<%= f.select :recommended_age, "<option value=\"0\">Por favor selecciona una opción</option>" + 
 		"<option value=\"0-6\">#{t '0-6', :scope => :recommended_ages }</option>" + 
 		"<option value=\"7-12\">#{t '7-12', :scope => :recommended_ages }</option>" + 
@@ -32,14 +32,14 @@
 		"<option value=\"+12\">#{t '+12', :scope => :recommended_ages }</option>", :class=>"select input"%>
 	</p>
 	<p>
-    <%= f.label "Contacto" %>
+    <%= f.label t 'toy_contact' %>
     <%= f.text_field :contact, :maxlength => 40, :class=>"input large" %>
 	</p>
 	<p>
-	<%= f.label "Imagen" %>
+	<%= f.label t 'toy_image' %>
 	<%= f.file_field :thumb %>
 	</p>	
 	<p>
-    <%= f.submit :class => "button" %>
+    <%= f.submit t('button_ok'), :class => "button" %>
 	</p>
 <% end %>

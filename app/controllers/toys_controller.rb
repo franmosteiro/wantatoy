@@ -45,10 +45,10 @@ class ToysController < ApplicationController
           # Initialize your Twitter client
           # TODO Sacar la configuración de la cuenta a un fichero?
           Twitter.configure do |config|
-            config.consumer_key = "7jQnUb3vA9siJvfMlWYgA"
-            config.consumer_secret = "sHCGamUqXdR98qX7Cs4WGtsstlizp5GoK2QUAXaX244"
-            config.oauth_token = "111562005-ByhLzzkmzQcWGWUHlFqOgXnbYffgjqW64xsJcKte"
-            config.oauth_token_secret = "Q9BUNpaHxxEwZKrjoP4zcH34u1DzVgmtmUc8j1ayk"
+            config.consumer_key = APP_CONFIG['twitter_consumer_key']
+            config.consumer_secret = APP_CONFIG['twitter_consumer_secret']
+            config.oauth_token = APP_CONFIG['twitter_oauth_token']
+            config.oauth_token_secret = APP_CONFIG['twitter_oauth_token_secret']
           end
           client = Twitter::Client.new
           # Post a tweet ;)

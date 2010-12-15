@@ -3,7 +3,7 @@
 	<% if @toy.errors.any? %>
     <div id="error_explanation">
     	<ul>
-      	<% @toy.errors.full_messages.each do |msg| %>
+      	<% @toy.errors.each do |attribute, msg| %>
         <li><%= msg %></li>
       	<% end %>
       	</ul>

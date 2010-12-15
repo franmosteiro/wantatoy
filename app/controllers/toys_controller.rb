@@ -40,21 +40,7 @@ class ToysController < ApplicationController
     @toy = Toy.create(params[:toy])    
     respond_to do |format|
       if @toy.save        
-        # El tweet solo se pública en producción
-        if (ENV['RAILS_ENV'] == 'production')
-          # Initialize your Twitter client
-          # TODO Sacar la configuración de la cuenta a un fichero?
-          Twitter.configure do |config|
-            config.consumer_key = APP_CONFIG['twitter_consumer_key']
-            config.consumer_secret = APP_CONFIG['twitter_consumer_secret']
-            config.oauth_token = APP_CONFIG['twitter_oauth_token']
-            config.oauth_token_secret = APP_CONFIG['twitter_oauth_token_secret']
-          end
-          client = Twitter::Client.new
-          # Post a tweet ;)
-          client.update("#{@toy.title} http://#{request.host}:#{unless request.port == 80 then request.port end}#{request.path}/#{@toy.id} #wantatoy")
-        end
-                        
+        tweet()
         format.html { redirect_to @toy, :notice => t('notice.new_toy_added') }
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
       else
@@ -63,5 +49,24 @@ class ToysController < ApplicationController
       end
     end
   end
+  
+  private
+  
+  def tweet
+    # El tweet solo se pública en producción
+    if (ENV['RAILS_ENV'] == 'production')
+      # Initialize your Twitter client
+      Twitter.configure do |config|
+        config.consumer_key = APP_CONFIG['twitter_consumer_key']
+        config.consumer_secret = APP_CONFIG['twitter_consumer_secret']
+        config.oauth_token = APP_CONFIG['twitter_oauth_token']
+        config.oauth_token_secret = APP_CONFIG['twitter_oauth_token_secret']
+      end
+      client = Twitter::Client.new
+      # Post a tweet ;)
+      client.update("#{@toy.title} http://#{request.host}:#{unless request.port == 80 then request.port end}#{request.path}/#{@toy.id} #wantatoy")
+    end
+  end
+    
           
 end

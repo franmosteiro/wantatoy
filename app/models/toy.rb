@@ -1,12 +1,14 @@
 class Toy < ActiveRecord::Base
+  
+  RECOMMENDED_AGES = ['0-6','7-12','13-18','19-24','2-3','4-5','6-8','9-11','+12']
       
   has_attached_file :thumb, :styles => { :large => ["438x438!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
   
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
+  validates :recommended_age, :inclusion => { :in => RECOMMENDED_AGES }  
+  validates :thumb_file_name, :presence => true  
   validates :contact, :presence => true, :length => { :maximum => 40 }
-  validates :thumb_file_name, :presence => true
-  validates :recommended_age, :presence => true, :inclusion => { :in => ['0-6','7-12','13-18','19-24','2-3','4-5','6-8','9-11','+12'] }  
   
   #Para paginar, definimos resultados/pagina
   def self.per_page

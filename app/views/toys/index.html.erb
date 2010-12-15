@@ -33,44 +33,44 @@ $(document).ready(function () {
 		<div class="clear"></div>
 		<div class="grid_16">
 			<cat>
-				<ul>
-					<li><h6>Por edades&nbsp;</h6></li>
-					<li><%= link_to "#{t '0-6', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "0-6", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '0-6') then 'round current' end}"}%>
+				<ul id="cat">					
+					<li><a href="#"><%= link_to "#{t '+12', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "+12", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '+12') then 'round current' end}"}%></a>
 					</li>
-					<li><a href="#"><%= link_to "#{t '7-12', :scope => :recommended_ages }", {:controller =>"toys",
-							:action => "index", :recommended_age => "7-12", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '7-12') then 'round current' end}"}%></a>
-					</li>
-					<li><a href="#"><%= link_to "#{t '13-18', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "13-18", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '13-18') then 'round current' end}"}%></a>
-					</li>
-					<li><a href="#"><%= link_to "#{t '19-24', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "19-24", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '19-24') then 'round current' end}"}%></a>
+					<li><a href="#"><%= link_to "#{t '9-11', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "9-11", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '9-11') then 'round current' end}"}%></a>
+					</li>					
+					<li><a href="#"><%= link_to "#{t '6-8', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "6-8", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '6-8') then 'round current' end}"}%></a>
+					</li>					
+					<li><a href="#"><%= link_to "#{t '4-5', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "4-5", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '4-5') then 'round current' end}"}%></a>
 					</li>
 					<li><a href="#"><%= link_to "#{t '2-3', :scope => :recommended_ages }", {:controller =>"toys", 
 							:action => "index", :recommended_age => "2-3", :title => params[:title]}, 
 							{:class => "#{if (params[:recommended_age] == '2-3') then 'round current' end}"}%></a>
 					</li>
-					<li><a href="#"><%= link_to "#{t '4-5', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "4-5", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '4-5') then 'round current' end}"}%></a>
+					<li><a href="#"><%= link_to "#{t '19-24', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "19-24", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '19-24') then 'round current' end}"}%></a>
 					</li>
-					<li><a href="#"><%= link_to "#{t '6-8', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "6-8", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '6-8') then 'round current' end}"}%></a>
-					</li>					
-					<li><a href="#"><%= link_to "#{t '9-11', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "9-11", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '9-11') then 'round current' end}"}%></a>
+					<li><a href="#"><%= link_to "#{t '13-18', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "13-18", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '13-18') then 'round current' end}"}%></a>
 					</li>
-					<li><a href="#"><%= link_to "#{t '+12', :scope => :recommended_ages }", {:controller =>"toys", 
-							:action => "index", :recommended_age => "+12", :title => params[:title]},
-							{:class => "#{if (params[:recommended_age] == '+12') then 'round current' end}"}%></a>
-					</li>										
+					<li><a href="#"><%= link_to "#{t '7-12', :scope => :recommended_ages }", {:controller =>"toys",
+							:action => "index", :recommended_age => "7-12", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '7-12') then 'round current' end}"}%></a>
+					</li>
+					<li><%= link_to "#{t '0-6', :scope => :recommended_ages }", {:controller =>"toys", 
+							:action => "index", :recommended_age => "0-6", :title => params[:title]},
+							{:class => "#{if (params[:recommended_age] == '0-6') then 'round current' end}"}%>
+					</li>
+					<li><h6>Por edades&nbsp;</h6></li>
 				</ul>
 			</cat>
 		</div>

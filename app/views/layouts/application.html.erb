@@ -15,20 +15,21 @@
 	
 	<div id="header">
 		<div class="container_16">
-		<div class="prefix_8 grid_8">			
+		<div class="grid_16">			
 			<nav>
-			<ul>				  
-				<li><%= link_to t('menu.home'), {:controller => 'home'},
-						{:class => "#{if (params[:controller] == 'home') then 'current' end}"}%>
+			<ul id="nav">				  
+				<li>
+					<%= link_to t('menu.new_toy'), new_toy_path, 
+						{:class => "#{if (params[:controller] == 'toys' and (params[:action] == 'new' or params[:action] == 'create')) then 'current' end}"} %>
 				</li>
 				<li>
 					<%= link_to t('menu.toys'), toys_path, 
 						{:class => "#{if (params[:controller] == 'toys' and params[:action] != 'new' and params[:action] != 'create') then 'current' end}"} %>
 				</li>
-				<li>
-					<%= link_to t('menu.new_toy'), new_toy_path, 
-						{:class => "#{if (params[:controller] == 'toys' and (params[:action] == 'new' or params[:action] == 'create')) then 'current' end}"} %>
+				<li><%= link_to t('menu.home'), {:controller => 'home'},
+						{:class => "#{if (params[:controller] == 'home') then 'current' end}"}%>
 				</li>
+
 			</ul>
 			</nav>
 		</div>

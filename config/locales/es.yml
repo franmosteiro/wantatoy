@@ -4,8 +4,7 @@
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 
 "es":
-    
-    
+        
   title: Wantatoy - Juguetes para jugar
     
   menu:
@@ -40,7 +39,7 @@
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
   toy_recommended_age: Edad recomendada
-  toy_contact: Contacto
+  toy_contact: Correo electrónico
   toy_image: Imagen
     
   link_back: Volver
@@ -245,7 +244,7 @@
             description:
                 blank: Debes indicar una descripción para el juguete
             contact:
-                blank: Debes indicar una forma de contacto
+                email: Debes indicar una cuenta de correo electrónico
             recommended_age:
                 inclusion: Por favor, selecciona una edad recomendada para el juguete
             thumb_file_name:

@@ -8,7 +8,7 @@ class Toy < ActiveRecord::Base
   validates :description, :presence => true, :length => { :maximum => 255 }
   validates :recommended_age, :inclusion => { :in => RECOMMENDED_AGES }  
   validates :thumb_file_name, :presence => true  
-  validates :contact, :presence => true, :length => { :maximum => 40 }
+  validates :contact, :presence => true, :email_pattern => true, :length => { :maximum => 40 }
   
   #Para paginar, definimos resultados/pagina
   def self.per_page

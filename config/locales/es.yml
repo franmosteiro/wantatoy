@@ -59,6 +59,7 @@
         
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
     new_toy_added: Muchas gracias por tu juguete
+  email_pattern: Debes indicar una cuenta de correo electrónico válida
     
   # Action View
   number:
@@ -244,7 +245,7 @@
             description:
                 blank: Debes indicar una descripción para el juguete
             contact:
-                email: Debes indicar una cuenta de correo electrónico
+                email_pattern: Debes indicar una cuenta de correo electrónico válida
             recommended_age:
                 inclusion: Por favor, selecciona una edad recomendada para el juguete
             thumb_file_name:

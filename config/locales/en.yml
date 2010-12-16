@@ -63,6 +63,7 @@
         
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
     new_toy_added: Muchas gracias por tu juguete
+  email_pattern: Debes indicar una cuenta de correo electrónico válida    
     
     # UK English translation for Rails
     # by Jon Wood (jon@blankpad.net)

@@ -4,48 +4,49 @@
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 
 "es":
-        
-  title: Wantatoy - Juguetes para jugar
     
+    
+  title: Wantatoy - Juguetes para jugar
+
   menu:
     home: Inicio
     toys: Ver los juguetes
     new_toy: Comparte uno
-    
+
   highlight:
     headline: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
     article:
       what: ¿Qué es?
       what_description: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
-            
+
       how: ¿Cómo funciona?
       how_description: Wantatoy es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
-            
+
       toys: Ver los juguetes
       toys_description: Échale un vistazo a la galería ... 
-            
+
       new_toy: ¡Comparte uno!
       new_toy_description: ¡ Comparte y disfruta !
-    
+
   footer:
     message: 2011 Wantatoy Team puedes seguirnos en 
-        
+
   last_toys: Últimos juguetes añadidos ...
   searching_for: ¿Que estás buscando?
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar.
-    
+
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
   toy_recommended_age: Edad recomendada
   toy_contact: Correo electrónico
   toy_image: Imagen
-    
+
   link_back: Volver
-    
+
   button_ok: Aceptar        
-    
+
   recommended_ages:
     '0-6': '0-6 Meses'
     '7-12': '7-12 Meses'
@@ -56,10 +57,10 @@
     '6-8': '6-8 Años'
     '9-11': '9-11 Años'
     '+12': '+12 Años'    
-        
+
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
     new_toy_added: Muchas gracias por tu juguete
-  email_pattern: Debes indicar una cuenta de correo electrónico válida
+    email_pattern: Debes indicar una cuenta de correo electrónico válida
     
   # Action View
   number:
@@ -237,20 +238,6 @@
       # Will define custom blank validation message for User model and 
       # custom blank validation message for login attribute of User model.
       #models:
-      models:
-        toy:
-          attributes:
-            title:
-              blank: Debes indicar un nombre para el juguete
-            description:
-                blank: Debes indicar una descripción para el juguete
-            contact:
-                email_pattern: Debes indicar una cuenta de correo electrónico válida
-            recommended_age:
-                inclusion: Por favor, selecciona una edad recomendada para el juguete
-            thumb_file_name:
-                blank: Debes subir una foto del juguete que facilite visualizar su estado
-              
 
     # Translate model names. Used in Model.human_name().
     #models:
@@ -337,4 +324,3 @@
       last_word_connector: ", y "
     select:
       prompt: "Por favor seleccione"
-

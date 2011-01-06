@@ -351,6 +351,10 @@ color: #ccc;
 display:none;
 }
 
+#message{
+padding-top:128px;	
+}
+
 /* * * FORMS * * */
 .small{width:15%;}
 .medium{width:35%;}

@@ -39,5 +39,9 @@ module Wantatoy
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    #config.action_mailer.delivery_method   = :postmark
+    #config.action_mailer.postmark_settings = { :api_key => "edbf0656-27e9-4804-8eed-ddf261edd869" }
+    
   end
 end

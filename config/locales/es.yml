@@ -5,7 +5,6 @@
 
 "es":
     
-    
   title: Wantatoy - Juguetes para jugar
 
   menu:
@@ -59,8 +58,9 @@
     '+12': '+12 Años'    
 
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
-    new_toy_added: Muchas gracias por tu juguete
+    new_toy_added: Muchas gracias por tu juguete. En breve recibirás un correo electrónico pidiendote tu confirmación para poder así publicarlo.
     email_pattern: Debes indicar una cuenta de correo electrónico válida
+    toy_activated: Gracias por activar tu juguete ;)
     
   # Action View
   number:

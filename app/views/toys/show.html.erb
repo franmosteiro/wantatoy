@@ -3,12 +3,10 @@
 		<div class="grid_8">
 			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
 		</div>
-		<div class="grid_8">
-			<%if (notice != nil)%><span id="notice"><%= notice %></span><%end%>
+		<div class="grid_8">			
 			<h1><%= @toy.title %></h1>
 			<h2>Edad recomendada <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
 			<p><%= @toy.description %></p>
-  			<p><%= @toy.contact %></p>
 			<%= link_to t('link_back'), toys_path%>
 		</div>	
 		<div class="clear"></div>

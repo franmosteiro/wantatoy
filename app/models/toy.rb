@@ -31,6 +31,10 @@ class Toy < ActiveRecord::Base
     where("activation_token = ?", token).first
   end
   
+  def self.search_last_toys
+    where("activation_token IS NULL", :limit => 4)
+  end
+  
   private
   
   def generate_token

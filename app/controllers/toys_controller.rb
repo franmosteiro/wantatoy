@@ -16,11 +16,15 @@ class ToysController < ApplicationController
   # GET /toys/1
   # GET /toys/1.xml
   def show
-    @toy = Toy.find(params[:id])    
-    @rest_toys = Toy.where(:contact => @toy.contact).reject{|toy| toy.id == @toy.id}
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @toy }
+    @toy = Toy.find_by_id(params[:id])  
+    if @toy
+      @rest_toys = Toy.where(:contact => @toy.contact).reject{|toy| toy.id == @toy.id}
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @toy }
+      end
+    else 
+      redirect_to :action => 'index'
     end
   end
 

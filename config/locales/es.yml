@@ -35,6 +35,7 @@
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar.
+  interested: ¿Te interesa?
 
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
@@ -42,7 +43,8 @@
   toy_contact: Correo electrónico
   toy_image: Imagen
 
-  link_back: Volver
+  link_want_it: Envía un mensaje privado a este usuario
+  link_back: << volver
 
   button_ok: Aceptar        
 

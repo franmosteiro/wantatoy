@@ -3,11 +3,12 @@
 		<div class="grid_8">
 			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
 		</div>
-		<div class="grid_8">			
+		<div class="grid_8">
+			<%= link_to t('link_back'), toys_path%>
 			<h1><%= @toy.title %></h1>
 			<h2>Edad recomendada <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
 			<p><%= @toy.description %></p>
-			<%= link_to t('link_back'), toys_path%>
+			<%= t 'interested'%>&nbsp;<%= link_to t('link_want_it'), toys_path%>
 		</div>	
 		<div class="clear"></div>
 	</div>

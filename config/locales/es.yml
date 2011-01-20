@@ -5,7 +5,7 @@
 
 "es":
     
-  title: Wantatoy - Juguetes para jugar
+  title: juguetea.org - Juguetes para jugar
 
   menu:
     home: Inicio
@@ -19,7 +19,7 @@
       what_description: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
 
       how: ¿Cómo funciona?
-      how_description: Wantatoy es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
+      how_description: Juguetea es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
 
       toys: Ver los juguetes
       toys_description: Échale un vistazo a la galería ... 
@@ -28,14 +28,14 @@
       new_toy_description: ¡ Comparte y disfruta !
 
   footer:
-    message: 2011 Wantatoy Team puedes seguirnos en 
+    message: 2011 Juguetea Team puedes seguirnos en 
 
   last_toys: Últimos juguetes añadidos ...
   searching_for: ¿Que estás buscando?
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar.
-  interested: ¿Te interesa?
+  interested: ¿Te interesa? Déjanos tu email y 
 
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
@@ -43,8 +43,9 @@
   toy_contact: Correo electrónico
   toy_image: Imagen
 
-  link_want_it: Envía un mensaje privado a este usuario
+  link_want_it: enviaremos un mensaje privado a este usuario
   link_back: << volver
+  link_cancel: Cancelar
 
   button_ok: Aceptar        
 
@@ -63,6 +64,7 @@
     new_toy_added: Muchas gracias por tu juguete. En breve recibirás un correo electrónico pidiendote tu confirmación para poder así publicarlo.
     email_pattern: Debes indicar una cuenta de correo electrónico válida
     toy_activated: Gracias por activar tu juguete ;)
+    new_contact_added: Muchas gracias, le enviaremos un mensaje mostrándole tu interés y pidiendole que se ponga en contacto contigo.
     
   # Action View
   number:

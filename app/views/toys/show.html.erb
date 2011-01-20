@@ -6,9 +6,20 @@
 		<div class="grid_8">
 			<%= link_to t('link_back'), toys_path%>
 			<h1><%= @toy.title %></h1>
-			<h2>Edad recomendada <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
+			<h2><%= t('toy_recommended_age')%> <%=t @toy.recommended_age.to_s, :scope => :recommended_ages %></h2>
 			<p><%= @toy.description %></p>
-			<%= t 'interested'%>&nbsp;<%= link_to t('link_want_it'), toys_path%>
+			<%if (notice.nil?)%>
+			<%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a>
+			<% else %>
+			<div id="notice">
+			<h2><%= notice %></h2>
+			</div>
+			<% end %>
+			<div id="form" style="width:100%;height:200px;margin-top:20px;display:none;">
+				<% form_for ([@toy, @toy.contacts.new]) do |f| %>
+				<%= f.text_field :email, :maxlength => 40, :class=>"input medium" %> <a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
+				<% end %>
+			</div>
 		</div>	
 		<div class="clear"></div>
 	</div>

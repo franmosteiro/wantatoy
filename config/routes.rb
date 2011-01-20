@@ -4,7 +4,9 @@ Wantatoy::Application.routes.draw do
   match 'toys/thanks' => 'toys#message', :as => :thanks
   match 'toys/activation/:token' => 'toys#activation', :as => :activation
 
-  resources :toys
+  resources :toys do
+    resources :contacts
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

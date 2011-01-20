@@ -18,6 +18,7 @@ class ToysController < ApplicationController
   def show
     @toy = Toy.find_by_id(params[:id])  
     if @toy
+      @new_contact = @toy.contacts.new
       @rest_toys = Toy.where(:contact => @toy.contact).reject{|toy| toy.id == @toy.id}
       respond_to do |format|
         format.html # show.html.erb
@@ -89,7 +90,7 @@ class ToysController < ApplicationController
       end
       client = Twitter::Client.new
       # Post a tweet ;)
-      client.update("#{@toy.title} http://#{request.host}#{request.path}/#{@toy.id} #wantatoy")
+      client.update("#{@toy.title} http://#{request.host}#{request.path}/#{@toy.id} #juguetea")
     end
   end  
          

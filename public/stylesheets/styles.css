@@ -315,9 +315,10 @@ padding-top:20px;
 border-bottom:1px solid #ddd;	
 margin-bottom:10px;
 }
-#toy_detail span#notice {	
+#toy_detail #notice h2{	
 color:#9CC970;	
 font-size:2em;
+text-align: left;
 }
 
 /* * * Paginacion * * */
@@ -357,7 +358,7 @@ padding-top:128px;
 
 /* * * FORMS * * */
 .small{width:15%;}
-.medium{width:35%;}
+.medium{width:65%;}
 .large{width:80%;}
 .full{width:98%;}
 

@@ -2,6 +2,8 @@ require 'active_support'
 
 class Toy < ActiveRecord::Base
   
+  has_many :contacts
+  
   RECOMMENDED_AGES = ['0-6','7-12','13-18','19-24','2-3','4-5','6-8','9-11','+12']
   
   before_create :generate_token

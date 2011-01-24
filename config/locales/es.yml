@@ -28,7 +28,7 @@
       new_toy_description: ¡ Comparte y disfruta !
 
   footer:
-    message: 2011 Juguetea Team puedes seguirnos en 
+    message: 2011 Juguetea puedes seguirnos en 
 
   last_toys: Últimos juguetes añadidos ...
   searching_for: ¿Que estás buscando?
@@ -47,7 +47,8 @@
   link_back: << volver
   link_cancel: Cancelar
 
-  button_ok: Aceptar        
+  button_ok: Aceptar
+  email_pattern: Debes indicar una dirección de correo válida
 
   recommended_ages:
     '0-6': '0-6 Meses'
@@ -242,6 +243,20 @@
       # Will define custom blank validation message for User model and 
       # custom blank validation message for login attribute of User model.
       #models:
+          
+      models:
+          toy:
+              attributes:
+                  title:
+                      blank: Debes indicar un nombre para el juguete
+                  description:
+                      blank: Debes indicar una descripción del juguete
+                  recommended_age:
+                      inclusion: Debes indicar una edad recomendada para el juguete
+                  thumb_file_name:
+                      blank: Debes compartir una imagen del juguete
+                  contact:
+                      email_pattern: Debes indicar una dirección de correo válida
 
     # Translate model names. Used in Model.human_name().
     #models:
@@ -289,6 +304,7 @@
       less_than_or_equal_to: "debe ser menor que o igual a %{count}"
       odd: "debe ser impar"
       even: "debe ser par"
+      email_pattern: Debes indicar una dirección de correo válida
 
   # Active Support
   date:

@@ -356,6 +356,10 @@ display:none;
 padding-top:128px;	
 }
 
+#error_explanation li{
+color:red;
+}
+
 /* * * FORMS * * */
 .small{width:15%;}
 .medium{width:65%;}

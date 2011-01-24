@@ -18,8 +18,8 @@ class ToysController < ApplicationController
   def show
     @toy = Toy.find_by_id(params[:id])  
     if @toy
-      @new_contact = @toy.contacts.new
-      @rest_toys = Toy.where(:contact => @toy.contact).reject{|toy| toy.id == @toy.id}
+      @contact = @toy.contacts.new
+      @rest_toys = Toy.rest_toys(@toy)
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @toy }

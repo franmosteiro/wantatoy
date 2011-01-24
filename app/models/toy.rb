@@ -37,6 +37,10 @@ class Toy < ActiveRecord::Base
     where("activation_token IS NULL", :limit => 4)
   end
   
+  def self.rest_toys(toy)
+    Toy.where(:contact => toy.contact).reject{|t| t.id == toy.id}
+  end
+  
   private
   
   def generate_token

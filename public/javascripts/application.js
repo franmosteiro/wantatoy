@@ -1,6 +1,6 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-$(document).ready(function () {
+$(function () {
 	$('#title').focus();
 	$('#toy_title').focus();	
 	$('div.thumb').hover(
@@ -25,6 +25,11 @@ $(document).ready(function () {
 	$('#cancel_link').click(
 		function(){
 			$('#form').hide(10);
+			$('#error_explanation').hide();
 		}		
 	);
+	if ($('#error_explanation').is (':visible')) {
+		$('#form').show(1);
+		$('#contact_email').focus();
+	}
 });

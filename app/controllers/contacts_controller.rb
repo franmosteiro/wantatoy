@@ -7,9 +7,11 @@ class ContactsController < ApplicationController
   def create
     @contact = @toy.contacts.new(params[:contact])
     if @contact.save
+      contact_mail(@toy, @contact.email)
       redirect_to(@toy, :notice => t('notice.new_contact_added'))
     else
-      render :controller => "toy", :action => "show", :id => @toy
+      @rest_toys = Toy.rest_toys(@toy)
+      render :action => 'toys/show'
     end
   end
   
@@ -18,5 +20,10 @@ class ContactsController < ApplicationController
   def load_toy
     @toy = @toy = Toy.find_by_id(params[:toy_id])  
   end
+  
+  def contact_mail(toy, contact)
+    Notifier.contact(toy, contact).deliver()
+  end
+  
 
 end

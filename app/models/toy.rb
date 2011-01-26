@@ -34,8 +34,8 @@ class Toy < ActiveRecord::Base
   end
   
   def self.search_last_toys
-    where("activation_token IS NULL", :limit => 4)
-  end
+      where({:activation_token => nil}, :order => 'updated_at DESC').limit(8)
+    end  
   
   def self.rest_toys(toy)
     Toy.where(:contact => toy.contact).reject{|t| t.id == toy.id}

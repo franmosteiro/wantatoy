@@ -1,7 +1,7 @@
 Wantatoy::Application.routes.draw do
 
-  match 'toys/ages/:recommended_age' => 'toys#index'
   match 'toys/thanks' => 'toys#message', :as => :thanks
+
   match 'toys/activation/:token' => 'toys#activation', :as => :activation
 
   resources :toys do

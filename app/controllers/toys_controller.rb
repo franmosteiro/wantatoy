@@ -3,10 +3,7 @@ class ToysController < ApplicationController
   # GET /toys
   # GET /toys.xml
   def index
-    @toys = Toy.search(params[:title], params[:recommended_age], params[:page] || 1)
-    if (params[:title].blank?)
-      params.delete(:title)
-    end
+    @toys = Toy.list_toys(params[:page] || 1)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @toys }
@@ -19,7 +16,7 @@ class ToysController < ApplicationController
     @toy = Toy.find_by_id(params[:id])  
     if @toy
       @contact = @toy.contacts.new
-      @rest_toys = Toy.rest_toys(@toy)
+      @rest_toys = Toy.list_rest_toys(@toy)
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @toy }

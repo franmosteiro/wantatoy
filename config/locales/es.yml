@@ -31,7 +31,6 @@
     message: 2011 Juguetea puedes seguirnos en 
 
   last_toys: Últimos juguetes añadidos ...
-  searching_for: ¿Que estás buscando?
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar.
@@ -39,7 +38,6 @@
 
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
-  toy_recommended_age: Edad recomendada
   toy_contact: Correo electrónico
   toy_image: Imagen
 
@@ -49,17 +47,6 @@
 
   button_ok: Aceptar
   email_pattern: Debes indicar una dirección de correo válida
-
-  recommended_ages:
-    '0-6': '0-6 Meses'
-    '7-12': '7-12 Meses'
-    '13-18': '13-18 Meses'
-    '19-24': '19-24 Meses'
-    '2-3': '2-3 Años'
-    '4-5': '4-5 Años'
-    '6-8': '6-8 Años'
-    '9-11': '9-11 Años'
-    '+12': '+12 Años'    
 
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
     new_toy_added: Muchas gracias por tu juguete. En breve recibirás un correo electrónico pidiendote tu confirmación para poder así publicarlo.
@@ -251,8 +238,7 @@
                       blank: Debes indicar un nombre para el juguete
                   description:
                       blank: Debes indicar una descripción del juguete
-                  recommended_age:
-                      inclusion: Debes indicar una edad recomendada para el juguete
+                      too_long: La descripción es demasido larga (máximo 255 caracteres)
                   thumb_file_name:
                       blank: Debes compartir una imagen del juguete
                   contact:

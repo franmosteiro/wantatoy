@@ -19,10 +19,6 @@
     <%= f.text_area :description, :cols => 50, :rows => 7, :class => "styled_textarea" %>
 	</p>	
 	<p>
-	<%= f.label t 'toy_recommended_age' %>
-	<%= f.select :recommended_age, Toy::RECOMMENDED_AGES.collect{|r| [t("recommended_ages.#{r}"), r]}, {:include_blank => true}%>
-	</p>
-	<p>
 	<%= f.label t 'toy_image' %>
 	<%= f.file_field :thumb %>
 	</p>	

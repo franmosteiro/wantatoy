@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110119222645) do
+ActiveRecord::Schema.define(:version => 20110126205157) do
 
   create_table "contacts", :force => true do |t|
     t.string   "email"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20110119222645) do
     t.string   "thumb_content_type"
     t.integer  "thumb_file_size"
     t.datetime "thumb_updated_at"
-    t.string   "recommended_age"
     t.string   "activation_token"
   end
 

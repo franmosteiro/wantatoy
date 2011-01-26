@@ -23,6 +23,9 @@ background:#fff;
 height:128px;
 border-bottom:1px solid #E6E3E3;
 }
+#header img{
+margin-top:10px;
+}
 #container {
 min-height:100%;
 position:relative;

@@ -72,7 +72,7 @@ class ToysController < ApplicationController
   private
         
   def thanks_mail(toy)
-    Notifier.thanks(toy, request.host, request.port, request.path).deliver()
+    Notifier.thanks(toy).deliver()
   end
   
   def post_tweet

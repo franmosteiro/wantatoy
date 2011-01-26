@@ -8,7 +8,8 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'will_paginate', '~> 3.0.pre2'
 gem 'twitter'
-#gem 'postmark-rails', '0.4.0'
+gem 'postmark'
+gem 'postmark-rails', '0.4.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'

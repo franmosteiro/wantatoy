@@ -253,49 +253,6 @@ border-bottom:2px solid #000;
 border-radius:10px;
 }
 
-/* * * Categories options * * */ 
-/*cat {
-float:right;
-padding:0px 0 0px 0;
-white-space: nowrap;
-}*/
-ul#cat {
-display: inline-block;
-margin:0;
-padding: 10px 0px 0px 0;
-float:right;
-white-space: nowrap;
-list-style-type: none;
-position:relative;
-}
-ul#cat li {
-list-style-type: none;
-display: inline-block;
-padding: 0em 0.4em 0em 0.4em;
-margin:0;
-float:right;
-}
-ul#cat li a {
-color:#6AC9EF;
-padding: 0;
-font-size:12px;
-text-decoration:underline;
-line-height:19px;
-}
-ul#cat li a.current {
-background:#6AC9EF;
-padding:6px;
-color:#fff;
-}
-ul#cat li a:hover {
-text-decoration: none;
-}
-ul#cat li h6{
-color:#6D6D6D;
-padding:0;
-margin:0;
-}
-
 /* * * Toy detail * * */
 #toy_detail{
 margin-top:20px;	
@@ -320,7 +277,6 @@ margin-bottom:10px;
 }
 #toy_detail #notice h2{	
 color:#9CC970;	
-font-size:2em;
 text-align: left;
 }
 

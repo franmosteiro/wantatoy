@@ -19,7 +19,7 @@ class Toy < ActiveRecord::Base
   end
     
   def self.list_toys(page)
-      paginate :page => page, :conditions => ["activation_token IS NULL"], :order => 'created_at DESC'
+      paginate :page => page, :conditions => ["activation_token IS NULL"], :order => 'updated_at DESC'
   end  
   
   def self.search_by_activation_token(token)
@@ -27,7 +27,7 @@ class Toy < ActiveRecord::Base
   end
   
   def self.list_last_toys
-      where({:activation_token => nil}, :order => 'updated_at DESC').limit(8)
+      where(:activation_token => nil).order('updated_at DESC').limit(8)
     end  
   
   def self.list_rest_toys(toy)

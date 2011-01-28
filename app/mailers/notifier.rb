@@ -1,6 +1,9 @@
 class Notifier < ActionMailer::Base
   
-    default :from => 'alex@11dema.com'
+    default :from => APP_CONFIG['default_email']
+    
+    def welcome
+    end
     
     def thanks(toy)   
 	  @url = activation_url(toy.activation_token)
@@ -10,7 +13,12 @@ class Notifier < ActionMailer::Base
 		    :tag => 'activation')
     end
     
-    def contact(toy, contact)
+    def contact(toy, contact)      
+      # Configure Postmark 
+      postmark_settings[:api_key] = APP_CONFIG['postmark_api_key']
+      smtp_settings[:user_name] = APP_CONFIG['postmark_api_key']
+      smtp_settings[:password] = APP_CONFIG['postmark_api_key']
+
       @contact = contact
       @title = toy.title
       mail(:to => toy.contact,

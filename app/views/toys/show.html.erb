@@ -26,7 +26,7 @@
 			<% end %>
 			
 			<div id="form" style="width:80%;height:200px;margin-top:20px;display:none;">				
-				<% form_for [@toy, @contact] do |f| %>
+				<%= form_for [@toy, @contact] do |f| %>
 				<%= f.text_field :email, :maxlength => 40, :class=>"input medium" %> <a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>

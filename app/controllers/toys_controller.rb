@@ -41,8 +41,7 @@ class ToysController < ApplicationController
   def create
     @toy = Toy.create(params[:toy])    
     respond_to do |format|
-      if @toy.save        
-        post_tweet()
+      if @toy.save                
         thanks_mail(@toy)        
         format.html { redirect_to :thanks, :notice => t('notice.new_toy_added') }
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
@@ -58,6 +57,7 @@ class ToysController < ApplicationController
     if (toy)
       toy.activation_token = nil
       toy.save
+      post_tweet(toy)
       flash[:notice] = t('notice.toy_activated')
       render :action => "message"
     else
@@ -75,7 +75,7 @@ class ToysController < ApplicationController
     Notifier.thanks(toy).deliver()
   end
   
-  def post_tweet
+  def post_tweet(toy)
     # El tweet solo se pública en producción
     if (ENV['RAILS_ENV'] == 'production')
       # Initialize your Twitter client
@@ -87,7 +87,7 @@ class ToysController < ApplicationController
       end
       client = Twitter::Client.new
       # Post a tweet ;)
-      client.update("#{@toy.title} http://#{request.host}#{request.path}/#{@toy.id} #juguetea")
+      client.update("#{toy.title} http://#{request.host}#{request.path}/#{toy.id} #juguetea")
     end
   end  
          

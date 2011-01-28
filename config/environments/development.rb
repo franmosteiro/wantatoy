@@ -27,8 +27,6 @@ Wantatoy::Application.configure do
   config.action_mailer.smtp_settings = {
 	  :address => "smtp.postmarkapp.com",
 	  :port => 25,
-    :user_name => 'postmark-api-key', # TODO Esto no debería de estar en este fichero, ni en Github
-    :password => 'postmark-api-key',	# TODO Esto no debería de estar en este fichero, ni en Github
 	  :authentication => 'plain'
   }
     

@@ -34,6 +34,10 @@ class Toy < ActiveRecord::Base
     Toy.where(:contact => toy.contact).reject{|t| t.id == toy.id}
   end
   
+  def self.get_toy(id)
+    Toy.where(:id => id, :activation_token => nil).first
+  end
+  
   private
   
   def generate_token

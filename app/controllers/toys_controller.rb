@@ -13,7 +13,7 @@ class ToysController < ApplicationController
   # GET /toys/1
   # GET /toys/1.xml
   def show
-    @toy = Toy.find_by_id(params[:id])  
+    @toy = Toy.get_toy(params[:id])
     if @toy
       @contact = @toy.contacts.new
       @rest_toys = Toy.list_rest_toys(@toy)

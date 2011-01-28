@@ -18,12 +18,11 @@ class ContactsController < ApplicationController
   private
   
   def load_toy
-    @toy = @toy = Toy.find_by_id(params[:toy_id])  
+    @toy = Toy.get_toy(params[:id])
   end
   
   def contact_mail(toy, contact)
     Notifier.contact(toy, contact).deliver()
   end
-  
 
 end

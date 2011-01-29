@@ -15,7 +15,7 @@ class Toy < ActiveRecord::Base
   
   #Para paginar, definimos resultados/pagina
   def self.per_page
-      12
+      16
   end
     
   def self.list_toys(page)

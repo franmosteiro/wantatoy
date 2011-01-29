@@ -31,7 +31,7 @@ class Toy < ActiveRecord::Base
     end  
   
   def self.list_rest_toys(toy)
-    Toy.where(:contact => toy.contact).reject{|t| t.id == toy.id}
+    Toy.where(:contact => toy.contact, :activation_token => nil).reject{|t| t.id == toy.id}
   end
   
   def self.get_toy(id)

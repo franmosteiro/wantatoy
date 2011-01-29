@@ -41,8 +41,12 @@ class ToysController < ApplicationController
   def create
     @toy = Toy.create(params[:toy])    
     respond_to do |format|
-      if @toy.save                
-        thanks_mail(@toy)        
+      if @toy.save
+        if (Toy.list_rest_toys(@toy).size == 0) 
+          Notifier.welcome(@toy).deliver()
+        else
+          Notifier.thanks(@toy).deliver()
+        end
         format.html { redirect_to :thanks, :notice => t('notice.new_toy_added') }
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
       else
@@ -70,11 +74,7 @@ class ToysController < ApplicationController
   end  
       
   private
-        
-  def thanks_mail(toy)
-    Notifier.thanks(toy).deliver()
-  end
-  
+          
   def post_tweet(toy)
     # El tweet solo se pública en producción
     if (ENV['RAILS_ENV'] == 'production')

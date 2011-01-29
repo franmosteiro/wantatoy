@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
   def create
     @contact = @toy.contacts.new(params[:contact])
     if @contact.save
-      contact_mail(@toy, @contact.email)
+      Notifier.contact(@toy, @contact.email).deliver()
       redirect_to(@toy, :notice => t('notice.new_contact_added'))
     else
       @rest_toys = Toy.rest_toys(@toy)
@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
   end
   
   def contact_mail(toy, contact)
-    Notifier.contact(toy, contact).deliver()
+    
   end
 
 end

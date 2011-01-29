@@ -5,7 +5,8 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.xml
   def create
-    @contact = @toy.contacts.new(params[:contact])
+    @contact = Contact.new(params[:contact])    
+    @contact.toy_id = @toy.id
     if @contact.save
       Notifier.contact(@toy, @contact.email).deliver()
       redirect_to(@toy, :notice => t('notice.new_contact_added'))
@@ -18,11 +19,7 @@ class ContactsController < ApplicationController
   private
   
   def load_toy
-    @toy = Toy.get_toy(params[:id])
-  end
-  
-  def contact_mail(toy, contact)
-    
+    @toy = Toy.get_toy(params[:toy_id])
   end
 
 end

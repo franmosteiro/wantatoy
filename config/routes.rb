@@ -3,6 +3,8 @@ Wantatoy::Application.routes.draw do
   match 'toys/thanks' => 'toys#message', :as => :thanks
 
   match 'toys/activation/:token' => 'toys#activation', :as => :activation
+  
+  match 'toys/cancel/:token' => 'toys#cancelation', :as => :cancelation
 
   resources :toys do
     resources :contacts

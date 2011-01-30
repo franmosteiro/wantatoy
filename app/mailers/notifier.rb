@@ -33,9 +33,10 @@ class Notifier < ActionMailer::Base
       postmark_settings[:api_key] = APP_CONFIG['postmark_api_key']
       smtp_settings[:user_name] = APP_CONFIG['postmark_api_key']
       smtp_settings[:password] = APP_CONFIG['postmark_api_key']
-      
+            
       @contact = contact
       @title = toy.title
+      @url = cancelation_url(toy.cancelation_token)
       mail(:to => toy.contact,
 		    :subject => "Alguien esta interesado en tu juguete",
 		    :date => Time.now,

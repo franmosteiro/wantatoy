@@ -53,6 +53,7 @@
     email_pattern: Debes indicar una cuenta de correo electrónico válida
     toy_activated: Gracias por activar tu juguete ;)
     new_contact_added: Muchas gracias, le enviaremos un mensaje mostrándole tu interés y pidiendole que se ponga en contacto contigo.
+    toy_canceled: Tu juguete ha sido dado de baja. Muchas gracias.
     
   # Action View
   number:

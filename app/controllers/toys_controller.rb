@@ -69,6 +69,18 @@ class ToysController < ApplicationController
     end
   end
   
+  def cancelation
+    toy = Toy.search_by_cancelation_token(params[:token])
+    if (toy)
+      toy.cancelation_token = nil
+      toy.save
+      flash[:notice] = t('notice.toy_canceled')
+      render :action => "message"      
+    else
+      redirect_to :action => 'index'
+    end
+  end
+  
   def message
     if (flash[:notice].nil?) then redirect_to :action => 'index' end
   end  

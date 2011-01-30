@@ -2,8 +2,9 @@ class ToysController < ApplicationController
     
   # GET /toys
   # GET /toys.xml
-  def index
-    @toys = Toy.list_toys(params[:page] || 1)
+  def index    
+    session[:page] = params[:page] || 1
+    @toys = Toy.list_toys(session[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @toys }
@@ -12,7 +13,7 @@ class ToysController < ApplicationController
 
   # GET /toys/1
   # GET /toys/1.xml
-  def show
+  def show      
     @toy = Toy.get_toy(params[:id])
     if @toy
       @contact = @toy.contacts.new

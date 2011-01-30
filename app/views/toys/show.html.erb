@@ -4,7 +4,7 @@
 			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
 		</div>
 		<div class="grid_8">
-			<%= link_to t('link_back'), toys_path%>
+			<%= link_to t('link_back'), toys_path(:page => session[:page])%>
 			<h1><%= @toy.title %></h1>
 			<p><%= @toy.description %></p>
 			<%if (notice.nil?)%>

@@ -1,7 +1,5 @@
 class Notifier < ActionMailer::Base
   
-    default :from => APP_CONFIG['default_email']
-        
     def welcome(toy)
       # Configure Postmark 
       postmark_settings[:api_key] = APP_CONFIG['postmark_api_key']
@@ -10,6 +8,7 @@ class Notifier < ActionMailer::Base
       
   	  @url = activation_url(toy.activation_token)
       mail(:to => toy.contact,
+        :from => APP_CONFIG['default_email'],
   		  :subject => 'Bienvenido a Juguetea',
   		  :date => Time.now,
   		  :tag => 'activation')      
@@ -23,6 +22,7 @@ class Notifier < ActionMailer::Base
       
 	    @url = activation_url(toy.activation_token)
       mail(:to => toy.contact,
+        :from => APP_CONFIG['default_email'],
 		    :subject => 'Gracias por compartir tu juguete',
 		    :date => Time.now,
 		    :tag => 'activation')
@@ -38,6 +38,7 @@ class Notifier < ActionMailer::Base
       @title = toy.title
       @url = cancelation_url(toy.cancelation_token)
       mail(:to => toy.contact,
+        :from => APP_CONFIG['default_email'],
 		    :subject => "Alguien esta interesado en tu juguete",
 		    :date => Time.now,
 		    :tag => 'contact')

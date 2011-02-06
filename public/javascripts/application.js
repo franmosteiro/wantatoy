@@ -32,3 +32,8 @@ $(function () {
 		$('#contact_email').focus();
 	}
 });
+function ctrl_dbl_click(){
+    $('form').submit(function(){
+        $('input[type=submit]', this).attr('disabled', true).attr("value", "Creando juguete...");
+    });
+}

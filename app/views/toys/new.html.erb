@@ -1,11 +1,15 @@
+
 <script type="text/javascript">
 $(document).ready(function(){
   init();
+  ctrl_dbl_click();
 
+
+  // Definiciones
+  $('#toy_description').limit('255','#charsLeft');
   function init(){
     $('input[type=submit]', this).removeAttr('disabled');
   }
-  ctrl_dbl_click();
 });
 </script>
 <div id="form">

@@ -38,6 +38,8 @@
 
   toy_title: Nombre del juguete
   toy_description: Descripción del juguete
+  toy_description_length_1: Aún puedes introducir
+  toy_description_length_2:   carácteres más.
   toy_contact: Correo electrónico
   toy_image: Imagen
 

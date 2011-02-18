@@ -54,3 +54,21 @@
 		<%end%>		
                 </div>
         </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#contact_link').click(
+    function(){
+      $('#form').show(10);
+      $('#contact_email').val('');
+      $('#contact_email').focus();
+    }
+  );
+  $('#cancel_link').click(
+    function(){
+      $('#form').hide(10);
+      $('#error_explanation').hide();
+    }
+  );
+});
+</script>

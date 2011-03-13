@@ -54,6 +54,7 @@ GEM
     paperclip (2.3.5)
       activerecord
       activesupport
+    permalink_fu (1.0.0)
     polyglot (0.3.1)
     postmark (0.9.5)
       tmail
@@ -100,6 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   paperclip
+  permalink_fu
   postmark
   postmark-rails (= 0.4.0)
   rails (= 3.0.1)

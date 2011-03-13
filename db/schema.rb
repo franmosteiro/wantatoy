@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110130104257) do
+ActiveRecord::Schema.define(:version => 20110313204315) do
 
   create_table "contacts", :force => true do |t|
     t.string   "email"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110130104257) do
     t.datetime "thumb_updated_at"
     t.string   "activation_token"
     t.string   "cancelation_token"
+    t.string   "permalink"
   end
 
 end

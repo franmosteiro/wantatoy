@@ -2,6 +2,7 @@ require 'active_support'
 
 class Toy < ActiveRecord::Base
   
+  has_permalink :title
   has_many :contacts
     
   before_create :generate_tokens
@@ -17,7 +18,7 @@ class Toy < ActiveRecord::Base
   def self.per_page
       16
   end
-    
+  
   def self.list_toys(page)
       paginate :page => page, :conditions => ["activation_token IS NULL and cancelation_token is not null"], :order => 'updated_at DESC'
   end  
@@ -39,8 +40,13 @@ class Toy < ActiveRecord::Base
   end
   
   def self.get_toy(id)
-    Toy.where("id = ? and activation_token is null and cancelation_token is not null", id).first
+    Toy.where("permalink = ? and activation_token is null and cancelation_token is not null", id).first
   end
+  
+  def to_param
+    permalink
+  end         
+  
   
   private
   

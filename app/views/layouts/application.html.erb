@@ -25,7 +25,7 @@
 				</li>
 				<li>
 					<%= link_to t('menu.toys'), toys_path, 
-						{:class => "#{if (params[:controller] == 'toys' and params[:action] != 'new' and params[:action] != 'create' and params[:action] != 'thanks') then 'current' end}"} %>
+						{:class => "#{if ((params[:controller] == 'toys' and params[:action] != 'new' and params[:action] != 'create' and params[:action] != 'thanks') || params[:controller] == 'contacts') then 'current' end}"} %>
 				</li>
 				<li><%= link_to t('menu.home'), {:controller => 'home'},
 						{:class => "#{if (params[:controller] == 'home') then 'current' end}"}%>

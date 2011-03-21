@@ -16,6 +16,12 @@ font-weight:normal;
 margin:0 0 25px;
 color:#109DD8;
 }
+#notice h1 {
+font-size:3em;
+font-weight:normal;
+margin:0 0 25px;
+color:#238F3C;
+}
 
 /* * * Layout * * */
 #header {

@@ -325,6 +325,7 @@ color:red;
 .large{width:80%;}
 .full{width:98%;}
 
+#form{margin-top:20px;}
 #form h1 {font-family:Georgia,"Times New Roman",Times,serif;font-size:2.8em;font-weight:normal;margin:13px 0 0px;color:#6D6D6D;float:right;padding-right:80px;}
 #form label{color:#6D6D6D;font-weight: bold; font-size: 14px; margin-bottom: 6px; display: block; margin-top: 12px;}
 #form p {padding: 0px; margin: 0px;}
@@ -334,3 +335,7 @@ color:red;
 #form input:focus, textarea:focus{background-color: #FFFFE1; border: 1px solid #999999;}
 #form input[type="text"]{font-size:18px;font-family: Arial, Helevtica, Verdana, san-serif;position:relative;outline: none;}
 form input[type="submit"]{margin:20px 0 20px 0;}
+.contact_textfield{width:240px;}
+.field_with_errors{display:inline;}
+
+

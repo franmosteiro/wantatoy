@@ -15,19 +15,20 @@
 			</div>
 			<% end %>
 
-			<% if (@contact && @contact.errors.any?) %>
-		    <div id="error_explanation">
-		    	<ul>
-		      	<% @contact.errors.each do |attribute, msg| %>
-		        <li><%= msg %></li>
-		      	<% end %>
-		      	</ul>
-		    </div>
+			 <% if (@contact && @contact.errors.any?) %>
+			<div id="error_explanation">
+			<ul>
+			<% @contact.errors.each do |attribute, msg| %>
+			<li><%= msg %></li>
 			<% end %>
-			
-			<div id="form" style="width:80%;height:200px;margin-top:20px;display:none;">				
+			</ul>
+			</div>
+			<% end %>
+						
+			<div id="form">
 				<%= form_for [@toy, @contact] do |f| %>
-				<%= f.text_field :email, :maxlength => 40, :class=>"input medium" %> <a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
+				<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
+				<button class="thoughtbot">Enviar</button>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>
 		</div>	
@@ -56,6 +57,7 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+  $('#contact_email').focus();	
   $('#contact_link').click(
     function(){
       $('#form').show(10);
@@ -69,5 +71,9 @@ $(document).ready(function(){
       $('#error_explanation').hide();
     }
   );
+  if ($('#error_explanation').is (':visible')) {
+	$('#form').show(1);
+	$('#contact_email').focus();
+  }
 });
 </script>

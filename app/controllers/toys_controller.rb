@@ -41,8 +41,15 @@ class ToysController < ApplicationController
   # POST /toys.xml
   def create
     @toy = Toy.create(params[:toy])    
+    
+    logger.info "***************************"    
+    @toy.errors.each do |attribute, msg|
+      logger.info "ATT:#{attribute} - #{msg}"
+    end
+    logger.info "***************************"
+    
     respond_to do |format|
-      if @toy.save
+      if (@toy.save)
         if (Toy.list_rest_toys(@toy).size == 0) 
           Notifier.welcome(@toy).deliver()
         else

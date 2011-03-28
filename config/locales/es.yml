@@ -5,7 +5,7 @@
 
 "es":
     
-  title: Juguetea - Disfruta compartiendo
+  title: Juguetea - Disfruta compartiendo    
 
   menu:
     home: Inicio
@@ -244,6 +244,10 @@
                       too_long: La descripción es demasido larga (máximo 255 caracteres)
                   thumb_file_name:
                       blank: Debes compartir una imagen del juguete
+                  thumb_content_type:
+                      not_valid: El formato de la imagen no es válido
+                  thumb_file_size:
+                      toobig: El tamaño de la imagen es demasiado grande
                   contact:
                       email_pattern: Debes indicar una dirección de correo válida
 

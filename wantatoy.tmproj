@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>app/views/toys/show.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -16,45 +14,32 @@
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>filename</key>
+			<string>public/stylesheets/untitled.css</string>
+			<key>lastUsed</key>
+			<date>2011-03-21T15:11:21Z</date>
+		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/views/toys/show.html.erb</key>
+		<key>public/stylesheets/untitled.css</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>10</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>27</integer>
+				<integer>34</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>19</integer>
-		</dict>
-		<key>public/stylesheets/styles.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>26</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
 			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>app/views/toys/show.html.erb</string>
-		<string>public/stylesheets/styles.css</string>
-	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>

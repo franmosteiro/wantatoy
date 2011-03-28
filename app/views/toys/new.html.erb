@@ -1,10 +1,22 @@
 <div id="form">
 	<div class="container_16">
-		<div class="grid_16">
+		<div class="grid_8"><%= render 'form' %></div>
+		<div class="grid_8">
 			<h1><%= t 'fill_toy_form'%></h1>
-		</div>
-		<div class="clear"></div>
-		<div class="grid_10 suffix_6"><%= render 'form' %></div>
+			<% if (@toy.errors.any?) %>
+		    <div id="error_explanation">
+		    	<ul>
+		      	<% @toy.errors.each do |attribute, msg| %>
+				<% if (attribute == :thumb_file_size)%>
+				<li><%= t 'activerecord.errors.models.toy.attributes.thumb_file_size.toobig'%></li>
+				<% elsif (attribute != :thumb)%>
+		        <li><%= msg %></li>
+				<% end %>
+		      	<% end %>
+		      	</ul>
+		    </div>
+			<% end %>			
+		</div>		
 		<div class="clear"></div>
 	</div>
 </div>

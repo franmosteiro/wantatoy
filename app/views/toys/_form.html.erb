@@ -1,15 +1,4 @@
 <% form_for @toy, :html => { :multipart => true } do |f| %>
-
-	<% if @toy.errors.any? %>
-    <div id="error_explanation">
-    	<ul>
-      	<% @toy.errors.each do |attribute, msg| %>
-        <li><%= msg %></li>
-      	<% end %>
-      	</ul>
-    </div>
-	<% end %>
-	
 	<p>
     <%= f.label t 'toy_title' %>
     <%= f.text_field :title, :maxlength => 40, :class=>"input large" %>

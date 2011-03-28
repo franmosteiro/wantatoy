@@ -2,17 +2,18 @@ require 'active_support'
 
 class Toy < ActiveRecord::Base
   
-  has_permalink :title
-  has_many :contacts
-    
   before_create :generate_tokens
-      
+  
+  has_permalink :title
+  has_many :contacts    
   has_attached_file :thumb, :styles => { :large => ["438x438!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
   
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
-  validates :thumb_file_name, :presence => true  
   validates :contact, :email_pattern => true, :length => { :maximum => 40 }
+  validates_attachment_presence :thumb
+  validates_attachment_content_type :thumb, :content_type => ['image/jpeg', 'image/png', 'image/gif'], :message => :not_valid
+  validates_attachment_size :thumb, :less_than => 3.megabytes
   
   #Para paginar, definimos resultados/pagina
   def self.per_page

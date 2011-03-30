@@ -107,7 +107,7 @@ class ToysController < ApplicationController
       end
       client = Twitter::Client.new
       # Post a tweet ;)
-      client.update("#{toy.title} http://#{request.host}#{request.path}/#{toy.id} #juguetea")
+      client.update("#{toy.title} http://#{request.host}/toys/#{toy.permalink} #juguetea")
     end
   end  
          

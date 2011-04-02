@@ -326,15 +326,33 @@ color:red;
 
 #form{margin-top:20px;}
 #form h1 {font-family:Georgia,"Times New Roman",Times,serif;font-size:2.8em;font-weight:normal;margin:13px 0 0px;color:#6D6D6D;float:right;padding-right:80px;}
-#form label{color:#6D6D6D;font-weight: bold; font-size: 14px; margin-bottom: 6px; display: block; margin-top: 12px;}
+#form label{color:#6D6D6D; font-size: 15px; margin-bottom: 6px; display: block; margin-top: 12px;}
 #form p {padding: 0px; margin: 0px;}
 #form .input{margin: 0px 10px 0px 0px;border: 1px solid #CCCCCC;padding: 7px;background-color: #F3F3F3;}
 #form select {margin: 0px 10px 0px 0px;border: 1px solid #CCCCCC;padding: 7px;background-color: #F3F3F3;width:83%;}
 #form .styled_textarea{font-size:18px;font-family: Arial, Helevtica, Verdana, san-serif;margin-bottom: 10px; background-color: #F3F3F3; width: 83%; padding: 0px; border: 1px solid #CCCCCC;}
-#form input:focus, textarea:focus{background-color: #FFFFE1; border: 1px solid #999999;}
 #form input[type="text"]{font-size:18px;font-family: Arial, Helevtica, Verdana, san-serif;position:relative;outline: none;}
+#form input[type="text"]:focus{background-color: #FFFFE1; border: 1px solid #999999;}
+#form textarea:focus{background-color: #FFFFE1; border: 1px solid #999999;}
 #form input[type="email"]{font-size:18px;font-family: Arial, Helevtica, Verdana, san-serif;position:relative;outline: none;}
-form input[type="submit"]{margin:20px 0 20px 0;}
+#form input[type="email"]:focus{background-color: #FFFFE1; border: 1px solid #999999;}
+form input[type="submit"]{margin:20px 0 20px 0;background:#109DD8;
+background: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #ee432e), color-stop(0.5, #c63929), color-stop(0.5, #b51700), color-stop(1, #891100));
+border: 1px solid #0879A5;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: #fff;
+font-family: "helvetica neue", helvetica, arial, sans-serif;
+font-size: 14px;
+line-height: 1;
+padding: 12px 0 10px 0;
+text-align: center;
+width: 140px;
+vertical-align:middle;
+display: inline;
+}
 .contact_textfield{width:240px;}
 .field_with_errors{display:inline;}
 

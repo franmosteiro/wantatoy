@@ -14,32 +14,11 @@
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
-		<dict>
-			<key>filename</key>
-			<string>public/stylesheets/untitled.css</string>
-			<key>lastUsed</key>
-			<date>2011-03-21T15:11:21Z</date>
-		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>public/stylesheets/untitled.css</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>34</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>

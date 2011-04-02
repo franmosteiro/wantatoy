@@ -9,8 +9,8 @@
 
   menu:
     home: Inicio
-    toys: Ver los juguetes
-    new_toy: Comparte uno
+    toys: Quiero un juguete
+    new_toy: Regala un juguete
 
   highlight:
     headline: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
@@ -33,17 +33,17 @@
   last_toys: Últimos juguetes añadidos ...
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
-  fill_toy_form: Por favor rellena la ficha con la información del juguete que quieres regalar.
-  interested: ¿Te interesa? Déjanos tu email y 
+  fill_toy_form: Muy buena idea
+  interested: ¿Te gusta? Déjanos tu email y 
 
   toy_title: Nombre del juguete
-  toy_description: Descripción del juguete
+  toy_description: Describelo un poco
   toy_description_length_1: Aún puedes introducir
   toy_description_length_2:   carácteres más.
-  toy_contact: Correo electrónico
-  toy_image: Imagen
+  toy_contact: Indícanos tu correo electrónico
+  toy_image: Sácale una foto y añádela
 
-  link_want_it: enviaremos un mensaje privado a este usuario
+  link_want_it: nos pondremos en contacto con este usuario
   link_back: << volver
   link_cancel: Cancelar
 

@@ -1,32 +1,17 @@
-<div id="highlight">
-	<div class="container_16">
-		<div class="grid_16">
-     		<h1><%= t 'highlight.headline'%></h1>
-   		</div>
-		<div class="clear"></div>
-		<div class="grid_4">
-			<h3><%= t 'highlight.article.what'%></h3>
-			<span class="lucida"><%= t 'highlight.article.what_description'%></span>
+<div class="container_16">
+	<div class="grid_16">
+		<div id="highlight">
+		<h2><%= t 'page_title.home'%></h2>
+		<p><%= t 'page_description.home'%></p>
+		<p><%= t 'page_description.home2'%></p>
 		</div>
-		<div class="grid_4">
-			<h3><%= t 'highlight.article.how'%></h3>
-			<span class="lucida"><%= t 'highlight.article.how_description'%></span>
-		</div>
-		<div class="grid_4">
-			<h3><%= link_to t('highlight.article.toys'), {:controller =>"toys", :action => "index"} %> »</h3>
-			<span class="lucida"><%= t 'highlight.article.toys_description'%></span>
-		</div>
-		<div class="grid_4">
-			<h3><%= link_to t('highlight.article.new_toy'), {:controller =>"toys", :action => "new"} %> »</h3>
-			<span class="lucida"><%= t 'highlight.article.new_toy_description'%></span>
-		</div>
-		<div class="clear"></div>
 	</div>
+	<div class="clear"></div>
 </div>
 <div id="grid">
 	<div class="container_16">
 	<%if (@toys.size > 0)%>
-	<div class="grid_16"><h1><%= t 'last_toys'%></h1></div>
+	<div class="grid_16"><h6><%= t 'last_toys'%></h6></div>
 	<div class="clear"></div>
 	<%end%>
 	<% @toys.each_with_index do |toy,index| %>

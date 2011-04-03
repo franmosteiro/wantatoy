@@ -5,57 +5,60 @@
 
 "es":
     
-  title: Juguetea - Disfruta compartiendo    
+  title: Juguetea - Juguetes más razonables
 
   menu:
     home: Inicio
     toys: Quiero un juguete
     new_toy: Regala un juguete
+    
+  page_title:
+      home: Bienvenido
+      search: Busca el que más te gusta
+      new: Disfruta compartiendo
 
-  highlight:
-    headline: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
-    article:
-      what: ¿Qué es?
-      what_description: Somos una nueva oportunidad para esos juguetes arrinconados en tu casa.
-
-      how: ¿Cómo funciona?
-      how_description: Juguetea es un como tablón de anuncios. Nos dices quién eres y qué compartes y ... ¡magia!
-
-      toys: Ver los juguetes
-      toys_description: Échale un vistazo a la galería ... 
-
-      new_toy: ¡Comparte uno!
-      new_toy_description: ¡ Comparte y disfruta !
-
+  page_description:
+      home: Esta iniciativa pretende impulsar un uso más razonable de los juguetes que regalamos a nuestros niños. La mayoría de ellos tienen más juguetes de los que pueden disfrutar y en muchas ocasiones quedán relegados por otros nuevos estando practicamente nuevos.
+      home2: Seguro que tu también tienes muchos juguetes olvidados en casa que otros pueden continuar disfrutando. Puede que incluso encuentres uno con el que te gustaría jugar. Anímate y participa.
+      search: Seguro que te gustaría jugar con alguno de estos juguetes. ¿Porque no lo pides?
+      new: Regala esos juguetes con los que ya no juegas y verás como haces felíz a otro niño
+                    
   footer:
     message: 2011 Juguetea puedes seguirnos en 
 
-  last_toys: Últimos juguetes añadidos ...
+  last_toys: Últimos juguetes añadidos
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Muy buena idea
-  interested: ¿Te gusta? Déjanos tu email y 
+  interested: ¿Te gusta?
+  new_toy: Sácale una foto a ese juguete, describe un poco como es, en que estado está y que juegos habeís compartido juntos y súbelo. Indica un email para que nosotros nos pongamos en contacto contigo cuando alguien este interesado. Tranquilo que no compartiremos tu email con nadie. Muchas gracias.
 
   toy_title: Nombre del juguete
-  toy_description: Describelo un poco
-  toy_description_length_1: Aún puedes introducir
-  toy_description_length_2:   carácteres más.
+  toy_description: Descríbelo un poco
+  toy_description_length_1: (aún puedes introducir
+  toy_description_length_2:   carácteres más)
   toy_contact: Indícanos tu correo electrónico
-  toy_image: Sácale una foto y añádela
+  toy_image: Sácale una foto y añádela (max. 3Mb)
 
-  link_want_it: nos pondremos en contacto con este usuario
+  link_want_it: Indicanos tu email
   link_back: << volver
   link_cancel: Cancelar
 
   button_ok: Aceptar
-  email_pattern: Debes indicar una dirección de correo válida
+  email_pattern: Debes indicar una dirección de correo válida.
 
   notice: # Mensajes de confirmación (notice) utilizados en los redirect    
-    new_toy_added: Muchas gracias por tu juguete. En breve recibirás un correo electrónico pidiendote tu confirmación para poder así publicarlo.
+    new_toy_added: 
+      title: Muchas gracias por tu juguete.
+      description: En breve recibirás un correo electrónico pidiendote tu confirmación para poder así publicarlo.
     email_pattern: Debes indicar una cuenta de correo electrónico válida
-    toy_activated: Gracias por activar tu juguete ;)
-    new_contact_added: Muchas gracias, le enviaremos un mensaje mostrándole tu interés y pidiendole que se ponga en contacto contigo.
-    toy_canceled: Tu juguete ha sido dado de baja. Muchas gracias.
+    toy_activated:
+      title: Gracias por contribuir a esta iniciativa
+      description: En cuanto alguien este interesado en el, nos pondremos en contacto contigo para que se lo puedas regalar.
+    new_contact_added: Muchas gracias, enviaremos un mensaje a este usuario mostrándole tu interés y pidiendole que se ponga en contacto contigo.
+    toy_canceled:
+      title:  Muchas gracias por regalar tu juguete
+      description: Seguro que otro niño va a disfrutar mucho con el.
     
   # Action View
   number:
@@ -238,18 +241,18 @@
           toy:
               attributes:
                   title:
-                      blank: Debes indicar un nombre para el juguete
+                      blank: Debes indicar un nombre para el juguete.
                   description:
-                      blank: Debes indicar una descripción del juguete
-                      too_long: La descripción es demasido larga (máximo 255 caracteres)
+                      blank: Debes indicar una descripción del juguete.
+                      too_long: La descripción es demasido larga (máximo 255 caracteres).
                   thumb_file_name:
-                      blank: Debes compartir una imagen del juguete
+                      blank: Debes compartir una imagen del juguete.
                   thumb_content_type:
-                      not_valid: El formato de la imagen no es válido
+                      not_valid: El formato de la imagen no es válido.
                   thumb_file_size:
-                      toobig: El tamaño de la imagen es demasiado grande
+                      toobig: El tamaño de la imagen es demasiado grande.
                   contact:
-                      email_pattern: Debes indicar una dirección de correo válida
+                      email_pattern: Debes indicar una dirección de correo válida.
 
     # Translate model names. Used in Model.human_name().
     #models:

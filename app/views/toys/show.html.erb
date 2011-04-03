@@ -8,37 +8,34 @@
 			<h1><%= @toy.title %></h1>
 			<p><%= @toy.description %></p>
 			<%if (notice.nil?)%>
-			<%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a>
+				<h6><%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a></h6>
 			<% else %>
-			<div id="notice">
+			<div id="confirm">
 			<h1><%= notice %></h1>
-			</div>
-			<% end %>
-
-			 <% if (@contact && @contact.errors.any?) %>
-			<div id="error_explanation">
-			<ul>
-			<% @contact.errors.each do |attribute, msg| %>
-			<li><%= msg %></li>
-			<% end %>
-			</ul>
 			</div>
 			<% end %>
 						
 			<div id="form">
+				 <% if (@contact && @contact.errors.any?) %>
+				<div id="error_explanation">
+				<% @contact.errors.each do |attribute, msg| %>
+				<%= msg %>
+				<% end %>
+				</div>
+				<% end %>	
 				<%= form_for [@toy, @contact] do |f| %>
 				<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
-				<button class="thoughtbot">Enviar</button>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
+				<%= f.submit t('button_ok'), :class => "button" %>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>
 		</div>	
 		<div class="clear"></div>
 	</div>
 </div>	
-<div id="other_toys">
+<div id="grid">
 	<div class="container_16">
 		<%if (@rest_toys.size > 0)%>
-		<div class="grid_16"><h5><%= t 'other_toys'%></h5></div>
+		<div class="grid_16"><h6><%= t 'other_toys'%></h6></div>
 		<div class="clear"></div>
 		<% @rest_toys.each_with_index do |toy,index| %>
 		<%if ((@rest_toys.size == index + 1) and ((index+1)%8 != 0))%>

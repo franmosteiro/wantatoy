@@ -55,7 +55,9 @@ class ToysController < ApplicationController
         else
           Notifier.thanks(@toy).deliver()
         end
-        format.html { redirect_to :thanks, :notice => t('notice.new_toy_added') }
+        flash[:title] = t('notice.new_toy_added.title')
+        flash[:desc] = t('notice.new_toy_added.description') 
+        format.html { redirect_to :thanks}
         format.xml  { render :xml => @toy, :status => :created, :location => @toy }
       else
         format.html { render :action => "new" }
@@ -70,7 +72,8 @@ class ToysController < ApplicationController
       toy.activation_token = nil
       toy.save
       post_tweet(toy)
-      flash[:notice] = t('notice.toy_activated')
+      flash[:title] = t('notice.toy_activated.title')
+      flash[:desc] = t('notice.toy_activated.description')
       render :action => "message"
     else
       redirect_to :action => 'index'
@@ -82,7 +85,8 @@ class ToysController < ApplicationController
     if (toy)
       toy.cancelation_token = nil
       toy.save
-      flash[:notice] = t('notice.toy_canceled')
+      flash[:title] = t('notice.toy_canceled.title')
+      flash[:desc] = t('notice.toy_canceled.description')
       render :action => "message"      
     else
       redirect_to :action => 'index'
@@ -90,7 +94,7 @@ class ToysController < ApplicationController
   end
   
   def message
-    if (flash[:notice].nil?) then redirect_to :action => 'index' end
+    if (flash[:title].nil?) then redirect_to :action => 'index' end
   end  
       
   private

@@ -1,5 +1,18 @@
+<div class="container_16">
+	<div class="grid_16">
+		<div id="highlight">
+		<h2><%= t 'page_title.new'%></h2>
+		<p><%= t 'page_description.new'%></p>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
 <div id="form">
 	<div class="container_16">				
+		<div class="grid_8">
+			<p><%= t 'new_toy'%></p>						
+		</div>
 		<div class="grid_8">
 			<% if (@toy.errors.any?) %>
 		    <div id="error_explanation">
@@ -14,8 +27,8 @@
 		      	</ul>
 		    </div>
 			<% end %>			
-		</div>
-		<div class="grid_8"><%= render 'form' %></div>	
+			<%= render 'form' %>
+		</div>	
 		<div class="clear"></div>
 	</div>
 </div>

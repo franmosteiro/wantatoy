@@ -6,10 +6,10 @@
 	<p>
     <%= f.label t 'toy_description' %>
     <%= f.text_area :description, :cols => 50, :rows => 7, :class => "styled_textarea" %>
-        </p>
-        <p>
-    <%= t 'toy_description_length_1'%> <b><span id="charsLeft"></span></b> <%= t 'toy_description_length_2'%>
-	</p>
+    </p>
+	<div class="tiny">
+		<%= t 'toy_description_length_1'%> <b><span id="charsLeft"></span></b> <%= t 'toy_description_length_2'%>
+	</div>
 	<p>
 	<%= f.label t 'toy_image' %>
 	<%= f.file_field :thumb %>
@@ -19,6 +19,6 @@
     <%= f.email_field :contact, :maxlength => 40, :class=>"input large" %>
 	</p>	
 	<p>
-    <%= f.submit t('button_ok'), :class => "button" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'quizás en otro momento', {:controller => 'home'} %>
+    <%= f.submit t('button_ok'), :class => "button" %>
 	</p>
 <% end %>

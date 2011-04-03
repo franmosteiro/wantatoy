@@ -1,6 +1,9 @@
 <div class="container_16">
 	<div class="grid_16" id="message">
-<%if (notice != nil)%><span id="notice"><h1><%= notice %></h1></span><%end%>
+		<div id="highlight">
+		<h2><%= flash[:title] %></h2>
+		<p><%= flash[:desc] %></p>
+		</div>		
 	</div>
 	<div class="clear"></div>
 </div>

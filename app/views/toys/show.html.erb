@@ -6,6 +6,7 @@
 		<div class="grid_8">
 			<%= link_to t('link_back'), toys_path(:page => session[:page])%>
 			<h1><%= @toy.title %></h1>
+			<h5><%= @toy.location %></h5>			
 			<p><%= @toy.description %></p>
 			<%if (notice.nil?)%>
 				<h6><%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a></h6>

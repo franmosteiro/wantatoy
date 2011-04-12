@@ -6,7 +6,6 @@
     <%= stylesheet_link_tag("text")%>
     <%= stylesheet_link_tag("960")%>
 	<%= stylesheet_link_tag("styles")%>
-	<%= stylesheet_link_tag("buttons")%>
     <%= csrf_meta_tag %>
     <%= javascript_include_tag :defaults %>
   </head>
@@ -34,7 +33,13 @@
 		</div>
 		<div class="clear"></div>
 		</div>	
-	</div>	
+	</div>
+	<div id="location">	
+		<div class="container_16">
+			<div class="grid_16"><h6><%= t 'location', :location => session[:geo_location].city %></h6></div>
+			<div class="clear"></div>
+		</div>
+	</div>
 	<div id="content">
 	<%= yield %>
 	</div>	

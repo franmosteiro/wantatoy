@@ -12,6 +12,7 @@ gem 'twitter'
 gem 'postmark'
 gem 'postmark-rails', '0.4.0'
 gem 'permalink_fu'
+gem 'geokit-rails3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

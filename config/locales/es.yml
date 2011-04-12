@@ -26,7 +26,8 @@
   footer:
     message: 2011 Juguetea puedes seguirnos en 
 
-  last_toys: Últimos juguetes añadidos
+  last_toys: Últimos juguetes cerca de %{location}
+  location: Estás cerca de %{location}
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Muy buena idea

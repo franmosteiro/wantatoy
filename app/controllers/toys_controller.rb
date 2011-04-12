@@ -4,7 +4,7 @@ class ToysController < ApplicationController
   # GET /toys.xml
   def index    
     session[:page] = params[:page] || 1
-    @toys = Toy.list_toys(session[:page])
+    @toys = Toy.list_toys(session[:page], session[:geo_location].lat, session[:geo_location].lng)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @toys }
@@ -17,7 +17,7 @@ class ToysController < ApplicationController
     @toy = Toy.get_toy(params[:id])
     if @toy
       @contact = @toy.contacts.new
-      @rest_toys = Toy.list_rest_toys(@toy)
+      @rest_toys = Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng)
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @toy }
@@ -41,16 +41,14 @@ class ToysController < ApplicationController
   # POST /toys.xml
   def create
     @toy = Toy.create(params[:toy])    
-    
-    logger.info "***************************"    
-    @toy.errors.each do |attribute, msg|
-      logger.info "ATT:#{attribute} - #{msg}"
-    end
-    logger.info "***************************"
-    
+    # Zarautz (43.2841255466168, -2.1692633628845215)
+    # Bilbao (43.256963, -2.923441)        
+    @toy.lat = session[:geo_location].lat
+    @toy.lng = session[:geo_location].lng
+    @toy.location = session[:geo_location].city    
     respond_to do |format|
       if (@toy.save)
-        if (Toy.list_rest_toys(@toy).size == 0) 
+        if (Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng).size == 0) 
           Notifier.welcome(@toy).deliver()
         else
           Notifier.thanks(@toy).deliver()

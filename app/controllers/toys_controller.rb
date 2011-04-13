@@ -45,7 +45,8 @@ class ToysController < ApplicationController
     # Bilbao (43.256963, -2.923441)        
     @toy.lat = session[:geo_location].lat
     @toy.lng = session[:geo_location].lng
-    @toy.location = session[:geo_location].city    
+    @toy.location = session[:geo_location].city
+    @toy.state = session[:geo_location].state
     respond_to do |format|
       if (@toy.save)
         if (Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng).size == 0) 

@@ -25,7 +25,7 @@
               	<%= link_to image_tag(toy.thumb.url(:medium)), toy %>
 			  	<%= link_to toy, {:class => "gallery-over"} do  %>
 			  	<strong><%= toy.title %></strong>
-				<span class="dim"><%= toy.location %></span>
+				<span class="dim"><%= toy.location %>, <%= toy.state %></span>
 				<%end%>
 				</div>			
             </div>

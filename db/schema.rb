@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110411213938) do
+ActiveRecord::Schema.define(:version => 20110413202518) do
 
   create_table "contacts", :force => true do |t|
     t.string   "email"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20110411213938) do
     t.float    "lat"
     t.float    "lng"
     t.string   "location"
+    t.string   "state"
   end
 
 end

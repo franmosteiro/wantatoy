@@ -108,8 +108,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  geokit-rails3
   aws-s3
+  geokit-rails3
   paperclip
   permalink_fu
   pg

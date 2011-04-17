@@ -6,8 +6,25 @@ class Toy < ActiveRecord::Base
   
   has_permalink :title
   has_many :contacts    
-  has_attached_file :thumb, :styles => { :large => ["438x438!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
-  
+  # Guardamos el thumb el "aws s3" sólo en producción 
+  if (ENV['RAILS_ENV'] == 'production')
+	  has_attached_file :thumb, 
+		:styles => { 
+					:large => ["438x438!", :png], 
+					:medium => ["198x198!", :png], 
+					:small => ["98x98!", :png] 
+		},
+		:storage => :s3,
+		:s3_credentials => "#{::Rails.root.to_s}/config/s3.yml",
+		:path => ":attachment/:style/:id/:filename"
+  else
+	  has_attached_file :thumb, 
+		:styles => { 
+					:large => ["438x438!", :png], 
+					:medium => ["198x198!", :png], 
+					:small => ["98x98!", :png] 
+		}
+  end	
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
   validates :contact, :email_pattern => true, :length => { :maximum => 40 }

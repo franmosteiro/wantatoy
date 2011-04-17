@@ -2,9 +2,12 @@ html,body {margin:0;padding:0;height:100%;letter-spacing:-0.03em;}
 body{background-color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial;height: 100%;}
 div#header {background:#333333;}
 div#header h1{color:#ffffff;}
+div#location{background:#EC5810;height:40px;color:#3EBAF7;text-align:right;}
+div#location h6{color:#ffffff;font-size:1.4em;padding-top:5px;}
 h1,h2,h3,h4,h5,h6{letter-spacing:-0.03em;}
 h1{color:#333333;font-size:400%;margin:0;padding:0;}
 h2{color:#333333;font-size:350%;margin:0;padding:0;}
+h5{color:#333333;}
 h6{color:#EC5810;font-size:1.6em;font-weight:300;margin-bottom:10px;}
 div#confirm h1{color:#EC5810;font-weight:300;}
 p{font-size:2em;}

@@ -1,13 +1,16 @@
 # aws s3
+common: &common
+  access_key_id: AKIAIRX6KHPYH54MPSGQ
+  secret_access_key: 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
+  
 development:
-  bucket: juguetea_dev
-  access_key_id: AKIAIRX6KHPYH54MPSGQ
-  secret_access_key: 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
+  <<: *common
+  bucket: juguetea.dev
+
 test:
-  bucket: juguetea_test
-  access_key_id: AKIAIRX6KHPYH54MPSGQ
-  secret_access_key: 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
+  <<: *common
+  bucket: juguetea.test
+
 production:
-  bucket: juguetea_prod
-  access_key_id: AKIAIRX6KHPYH54MPSGQ
-  secret_access_key: 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
+  <<: *common
+  bucket: juguetea.prod

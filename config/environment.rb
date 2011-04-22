@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Wantatoy::Application.initialize!
 
 # Initilialize APP_CONFIG hash (the config.yml file should not be commited to the repository!!!)
-APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/config.yml")
+APP_CONFIG = YAML.load_file("#{::Rails.root.to_s}/config/config.yml")

@@ -14,10 +14,10 @@ class Toy < ActiveRecord::Base
 			:small => ["98x98!", :png] 
 	},
 	:storage => :s3,
-	:s3_credentials => "#{::Rails.root.to_s}/config/s3.yml",
+	:s3_credentials => Rails.root.join('config/s3.yml').to_s,
 	:s3_protocol => "https",
-	:s3_permissions => 'authenticated-read',# is the one to use so that read access is only available to the object owner or an authenticated user.
-	:path => ":attachment/:style/:id/:filename",
+	#:s3_permissions => 'authenticated-read',# is the one to use so that read access is only available to the object owner or an authenticated user.
+	:path => ":contact_:attachment/:style/:id/:filename",
 	:url  => ":s3_eu_url"
 
   validates :title,  :presence => true, :length => { :maximum => 40 }

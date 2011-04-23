@@ -6,25 +6,20 @@ class Toy < ActiveRecord::Base
   
   has_permalink :title
   has_many :contacts    
-  # Guardamos el thumb el "aws s3" sólo en producción 
-  if (ENV['RAILS_ENV'] == 'production')
-	  has_attached_file :thumb, 
-		:styles => { 
-					:large => ["438x438!", :png], 
-					:medium => ["198x198!", :png], 
-					:small => ["98x98!", :png] 
-		},
-		:storage => :s3,
-		:s3_credentials => "#{::Rails.root.to_s}/config/s3.yml",
-		:path => ":attachment/:style/:id/:filename"
-  else
-	  has_attached_file :thumb, 
-		:styles => { 
-					:large => ["438x438!", :png], 
-					:medium => ["198x198!", :png], 
-					:small => ["98x98!", :png] 
-		}
-  end	
+  # Guardamos el thumb el "aws s3"
+  has_attached_file :thumb, 
+	:styles => { 
+			:large => ["438x438!", :png], 
+			:medium => ["198x198!", :png], 
+			:small => ["98x98!", :png] 
+	},
+	:storage => :s3,
+	:s3_credentials => Rails.root.join('config/s3.yml').to_s,
+	:s3_protocol => "https",
+	#:s3_permissions => 'authenticated-read',# is the one to use so that read access is only available to the object owner or an authenticated user.
+	:path => ":contact_:attachment/:style/:id/:filename",
+	:url  => ":s3_eu_url"
+
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
   validates :contact, :email_pattern => true, :length => { :maximum => 40 }

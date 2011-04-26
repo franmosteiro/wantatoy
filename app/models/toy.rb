@@ -17,7 +17,7 @@ class Toy < ActiveRecord::Base
 	:s3_credentials => Rails.root.join('config/s3.yml').to_s,
 	:s3_protocol => "https",
 	#:s3_permissions => 'authenticated-read',# is the one to use so that read access is only available to the object owner or an authenticated user.
-	:path => ":contact_:attachment/:style/:id/:filename",
+	:path => ":attachment/:id/:style/:filename",
 	:url  => ":s3_eu_url"
 
   validates :title,  :presence => true, :length => { :maximum => 40 }

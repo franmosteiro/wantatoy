@@ -1,0 +1,11 @@
+/* TEAM */
+Developer:	Alex Epelde
+Developer:	Fran Mosteiro
+Contact: 	admin[at]juguetea[dot]org
+Twitter: 	@jugutea_org
+
+/* SITE */
+Last update:	2011/04/01
+Language:	Spanish (Spain)
+Doctype:	XHTML 1.0 Strict
+Tools:	HTML, CSS, jquery, Rails

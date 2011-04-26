@@ -41,11 +41,13 @@ $(document).ready(function(){
   $('#toy_description').limit('255','#charsLeft');
   function init(){
     $('input[type=submit]', this).removeAttr('disabled');
+	$('input[type=submit]').button();
     $('#toy_title').focus();
     if ($('#error_explanation').is (':visible')) {
       $('#form').show(1);
       $('#contact_email').focus();
     }
+	
   }
 });
 </script>

@@ -73,13 +73,13 @@ div.pagination span.disabled {padding: 10px;margin: 10px 0 10px 0;background-col
 #form textarea:focus{background-color: #FFFFE1; border: 1px solid #999999;}
 #form input[type="email"]{font-size:18px;font-family: 'Helvetica Neue',Helvetica,Arial, san-serif;position:relative;outline: none;}
 #form input[type="email"]:focus{background-color: #FFFFE1; border: 1px solid #999999;}
-form input[type="submit"]{margin:20px 0 20px 0;background:#109DD8;background: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
+/*form input[type="submit"]{margin:20px 0 20px 0;background:#109DD8;background: -moz-linear-gradient(top, #ee432e 0%, #c63929 50%, #b51700 50%, #891100 100%);
 background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #ee432e), color-stop(0.5, #c63929), color-stop(0.5, #b51700), color-stop(1, #891100));
 border: 1px solid #0879A5;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;color: #ffffff;font-family: "helvetica neue", helvetica, arial, sans-serif;
 font-size: 14px;line-height: 1;padding: 12px 0 10px 0;text-align: center;width: 110px;vertical-align:middle;display: inline;}
 form input[type="submit"]:hover{background:#3EBAF7;background: -moz-linear-gradient(top, #f37873 0%, #db504d 50%, #cb0500 50%, #a20601 100%);
 background: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #f37873), color-stop(0.5, #db504d), color-stop(0.5, #cb0500), color-stop(1, #a20601));
-color: #ffffff;cursor: pointer;}
+color: #ffffff;cursor: pointer;}*/
 .contact_textfield{width:240px;}
 .field_with_errors{display:inline;}
 div.tiny{font-size:1em;}

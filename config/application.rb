@@ -32,7 +32,7 @@ module Wantatoy
     config.i18n.default_locale = :es
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.4.min rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.5.1.min jquery-ui-1.8.12.custom.min)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

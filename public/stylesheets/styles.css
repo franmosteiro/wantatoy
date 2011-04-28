@@ -2,8 +2,8 @@ html,body {margin:0;padding:0;height:100%;letter-spacing:-0.03em;}
 body{background-color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial;height: 100%;}
 div#header {background:#333333;}
 div#header h1{color:#ffffff;}
-div#location{background:#EC5810;height:40px;color:#3EBAF7;text-align:right;}
-div#location h6{color:#ffffff;font-size:1.4em;padding-top:5px;}
+div#currentlocation{background:#EC5810;height:40px;color:#3EBAF7;text-align:right;}
+div#currentlocation h6{color:#ffffff;font-size:1.4em;padding-top:5px;}
 h1,h2,h3,h4,h5,h6{letter-spacing:-0.03em;}
 h1{color:#333333;font-size:400%;margin:0;padding:0;}
 h2{color:#333333;font-size:350%;margin:0;padding:0;}
@@ -23,7 +23,7 @@ div#highlight{border-bottom:5px solid #DDDDDD;}
 ul#nav {float: right;padding: 0;white-space: nowrap;margin: 28px 0px 14px 0px;position:relative;white-space: nowrap;}
 ul#nav li {list-style-type: none;display: inline-block;}
 ul#nav li a {color:#DDDDDD;font-family:'Helvetica Neue',Helvetica,Arial;font-size:1.4em;font-weight:normal;text-decoration:none;padding: 0.4em 0;}
-ul#nav li a.current {color:#3EBAF7;}
+/*ul#nav li a.current {color:#3EBAF7;}*/
 ul#nav li a:hover {color:#ffffff;}
 
 /* * * Grid imagenes * * */

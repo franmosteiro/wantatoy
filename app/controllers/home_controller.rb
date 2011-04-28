@@ -1,5 +1,3 @@
-include Geokit::Geocoders
-
 class HomeController < ApplicationController
   
   # GET /

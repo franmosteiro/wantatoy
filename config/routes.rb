@@ -5,6 +5,8 @@ Wantatoy::Application.routes.draw do
   match 'toys/activation/:token' => 'toys#activation', :as => :activation
   
   match 'toys/cancel/:token' => 'toys#cancelation', :as => :cancelation
+  
+  match 'location' => 'location#edit', :as => :edit_location
 
   resources :toys do
     resources :contacts

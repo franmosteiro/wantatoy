@@ -1,5 +1,5 @@
 class ToysController < ApplicationController
-    
+      
   # GET /toys
   # GET /toys.xml
   def index    
@@ -110,7 +110,7 @@ class ToysController < ApplicationController
       end
       client = Twitter::Client.new
       # Post a tweet ;)
-      client.update("#{toy.title} http://#{request.host}/toys/#{toy.permalink} #juguetea")
+      client.update("#{toy.title} #{toy.location} http://#{request.host}/toys/#{toy.permalink} #juguetea")
     end
   end  
          

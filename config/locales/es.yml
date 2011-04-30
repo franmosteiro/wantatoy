@@ -32,14 +32,22 @@
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Muy buena idea
   interested: ¿Te gusta?
-  new_toy: Sácale una foto a ese juguete, describe un poco como es, en que estado está y que juegos habeís compartido juntos y súbelo. Indica un email para que nosotros nos pongamos en contacto contigo cuando alguien este interesado. Tranquilo que no compartiremos tu email con nadie. Muchas gracias.
-
+  new_toy1: Sácale una foto a ese juguete
+  new_toy2: Describe un poco como es, en que estado está y que juegos habeís compartido juntos
+  new_toy3: Indica un email para que nosotros nos pongamos en contacto contigo cuando alguien este interesado
+  new_toy4: (Tranquil@ que no compartiremos tu email con nadie ;P )
+  new_toy5: ¡Haz "click" en Aceptar y que empiece la magia! 
+  
   toy_title: Nombre del juguete
   toy_description: Descríbelo un poco
   toy_description_length_1: (aún puedes introducir
   toy_description_length_2:   carácteres más)
   toy_contact: Indícanos tu correo electrónico
   toy_image: Sácale una foto y añádela (max. 3Mb)
+  toy_submit_new2: Creando ficha a tu juguete ... 
+  toy_modal_header: ¡ Nuevo juguete !
+  toy_modal_body1: Estamos creando una bonita ficha para tu juguete ... 
+  toy_modal_body2: ¡ Danos un poco de tiempo !
 
   link_want_it: Indicanos tu email
   link_back: << volver

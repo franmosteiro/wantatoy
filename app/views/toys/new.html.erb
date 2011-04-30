@@ -11,7 +11,12 @@
 <div id="form">
 	<div class="container_16">				
 		<div class="grid_8">
-			<p><%= t 'new_toy'%></p>						
+			<p><%= t 'new_toy1'%></p>
+			<p><%= t 'new_toy2'%></p>
+			<p><%= t 'new_toy3'%>
+			   <%= t 'new_toy4'%>
+			</p>
+			<p><%= t 'new_toy5'%></p>
 		</div>
 		<div class="grid_8">
 			<% if (@toy.errors.any?) %>
@@ -32,22 +37,42 @@
 		<div class="clear"></div>
 	</div>
 </div>
+<div id="new_toy_modal">
+	<span><%= t 'toy_modal_body1'%></span></br>
+	<span><%= t 'toy_modal_body2'%></span></br>
+	<span><%= image_tag "ajax-loader.gif"%></span></br>
+</div>
+
 <script type="text/javascript">
 $(document).ready(function(){
   init();
-  ctrl_dbl_click();
-
-  // Definiciones
-  $('#toy_description').limit('255','#charsLeft');
-  function init(){
-    $('input[type=submit]', this).removeAttr('disabled');
+  initDialogBox();
+});
+$('#form').submit(function(){
+  $('#toy_submit').attr("value", "<%= t 'toy_submit_new2'%>");
+  $( "#new_toy_modal" ).dialog('open');
+});
+function init(){
+	$('#toy_description').limit('255','#charsLeft');
 	$('input[type=submit]').button();
     $('#toy_title').focus();
     if ($('#error_explanation').is (':visible')) {
       $('#form').show(1);
       $('#contact_email').focus();
     }
-	
-  }
-});
+}
+function initDialogBox(){
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	$( "#new_toy_modal" ).dialog({
+		title: "<%= t 'toy_modal_header'%>",
+		disabled: true,
+		height: 250,
+		width: 400,
+		resizable: false,
+		autoOpen: false,
+		show: 'blind',
+		hide: 'explode',
+		modal: true
+	});
+}
 </script>

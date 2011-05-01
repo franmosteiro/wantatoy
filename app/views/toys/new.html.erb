@@ -11,12 +11,25 @@
 <div id="form">
 	<div class="container_16">				
 		<div class="grid_8">
-			<p><%= t 'new_toy1'%></p>
-			<p><%= t 'new_toy2'%></p>
-			<p><%= t 'new_toy3'%>
-			   <%= t 'new_toy4'%>
-			</p>
-			<p><%= t 'new_toy5'%></p>
+			<ul class="step-list">
+				<li>
+					<div class="number">1</div>
+					<div class="explain"><%= t 'new_toy1'%></div>
+				</li>
+				<li>
+					<div class="number">2</div>
+					<div class="explain"><%= t 'new_toy2'%></div>
+				</li>
+				<li>
+					<div class="number">3</div>
+					<div class="explain"><%= t 'new_toy3'%></div>
+					<div class="explain"><%= t 'new_toy4'%></div>
+				</p></li>
+				<li>
+					<div class="number">4</div>
+					<div class="explain"><%= t 'new_toy5'%></div>
+				</li>
+			</ul>
 		</div>
 		<div class="grid_8">
 			<% if (@toy.errors.any?) %>
@@ -39,8 +52,8 @@
 </div>
 <div id="new_toy_modal">
 	<span><%= t 'toy_modal_body1'%></span></br>
-	<span><%= t 'toy_modal_body2'%></span></br>
 	<span><%= image_tag "ajax-loader.gif"%></span></br>
+	<span><%= t 'toy_modal_body2'%></span></br>
 </div>
 
 <script type="text/javascript">
@@ -51,6 +64,9 @@ $(document).ready(function(){
 $('#form').submit(function(){
   $('#toy_submit').attr("value", "<%= t 'toy_submit_new2'%>");
   $( "#new_toy_modal" ).dialog('open');
+});
+$(window).resize(function() {
+    $("#new_toy_modal").dialog("option", "position", "center");
 });
 function init(){
 	$('#toy_description').limit('255','#charsLeft');
@@ -65,14 +81,18 @@ function initDialogBox(){
 	$( "#dialog:ui-dialog" ).dialog( "destroy" );
 	$( "#new_toy_modal" ).dialog({
 		title: "<%= t 'toy_modal_header'%>",
-		disabled: true,
+		modal: true,
 		height: 250,
 		width: 400,
 		resizable: false,
-		autoOpen: false,
-		show: 'blind',
-		hide: 'explode',
-		modal: true
+		autoResize: true,
+		disabled: true,
+		draggable: false,
+		//autoOpen: false,
+		//closeOnEscape: false,
+		show: 'explode',
+		hide: 'blind',
+		open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); } //getting out de cross on the title
 	});
 }
 </script>

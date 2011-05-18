@@ -1,0 +1,15 @@
+# aws s3
+development:
+  access_key_id: AKIAIRX6KHPYH54MPSGQ
+  secret_access_key: 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
+  bucket: juguetea.dev
+
+test:
+  access_key_id: AKIAIRX6KHPYH54MPSGQ
+  secret_access_key: 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
+  bucket: juguetea.test
+
+production:
+  access_key_id: AKIAIRX6KHPYH54MPSGQ
+  secret_access_key: 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
+  bucket: juguetea.prod

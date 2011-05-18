@@ -6,8 +6,20 @@ class Toy < ActiveRecord::Base
   
   has_permalink :title
   has_many :contacts    
-  has_attached_file :thumb, :styles => { :large => ["438x438!", :png], :medium => ["198x198!", :png], :small => ["98x98!", :png] }
-  
+  # Guardamos el thumb el "aws s3"
+  has_attached_file :thumb, 
+	:styles => { 
+			:large => ["438x438!", :png], 
+			:medium => ["198x198!", :png], 
+			:small => ["98x98!", :png] 
+	},
+	:storage => :s3,
+	:s3_credentials => Rails.root.join('config/s3.yml').to_s,
+	:s3_protocol => "https",
+	#:s3_permissions => 'authenticated-read',# is the one to use so that read access is only available to the object owner or an authenticated user.
+	:path => ":attachment/:id/:style/:filename",
+	:url  => ":s3_eu_url"
+
   validates :title,  :presence => true, :length => { :maximum => 40 }
   validates :description, :presence => true, :length => { :maximum => 255 }
   validates :contact, :email_pattern => true, :length => { :maximum => 40 }

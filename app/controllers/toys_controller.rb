@@ -41,12 +41,13 @@ class ToysController < ApplicationController
   # POST /toys.xml
   def create
     @toy = Toy.create(params[:toy])    
-    # Zarautz (43.2841255466168, -2.1692633628845215)
-    # Bilbao (43.256963, -2.923441)        
     @toy.lat = session[:geo_location].lat
     @toy.lng = session[:geo_location].lng
     @toy.location = session[:geo_location].city
-    @toy.state = session[:geo_location].state
+    logger.debug "(1)#{session[:geo_location].state}"
+    logger.debug "(2)#{Location::STATES[session[:geo_location].state.to_sym]}"
+    logger.debug "(3)#{Location::STATES[session[:geo_location].state.to_sym].nil?}"
+    @toy.state = "#{Location::STATES[session[:geo_location].state.to_sym] or session[:geo_location].state}"
     respond_to do |format|
       if (@toy.save)
         if (Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng).size == 0) 

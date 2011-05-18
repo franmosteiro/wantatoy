@@ -1,14 +1,14 @@
 <div class="container_16">
 	<div class="grid_16">
 		<div id="highlight">
-		<h2><%= t 'page_title.location'%></h2>
-		<p><%= t 'page_description.location'%></p>
+			<h2><%= flash[:title] %></h2>
+			<p><%= flash[:desc] %></p>			
 		</div>
 	</div>
 	<div class="clear"></div>
 	<div class="grid_8 suffix_8">
 		<% form_tag 'location', :method => 'post', :id =>"form" do %>
-		<%= text_field_tag 'location',@location,{:id => "location", :class=>"input medium"}%>
+		<%= text_field_tag 'location', @location, {:id => "location", :class=>"input medium"}%>
 		<%= submit_tag t('button_ok') %>
 		<% end %>
 	</div>

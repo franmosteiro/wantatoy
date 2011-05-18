@@ -29,7 +29,7 @@
     message: 2011 Juguetea puedes seguirnos en 
 
   last_toys: Últimos juguetes cerca de %{location}
-  location: Estás en %{location}, %{state}
+  location: Estás en %{location}
   no_toy_found: Lo sentimos mucho, pero no se han encontrado juguetes :(
   other_toys: Otros juguetes del mismo usuario
   fill_toy_form: Muy buena idea
@@ -62,6 +62,12 @@
     toy_canceled:
       title:  Muchas gracias por regalar tu juguete
       description: Seguro que otro niño va a disfrutar mucho con el.
+    location_not_spain:
+        title: Cambia tu localidad
+        description: Lo sentimos mucho, por ahora solo estamos llevando a cabo esta iniciativa en territorio español.
+    improve_location:
+        title: No podemos localizarte
+        description: Indicanos tu localidad y provincia para ayudarnos a localizarte mejor.
     
   # Action View
   number:

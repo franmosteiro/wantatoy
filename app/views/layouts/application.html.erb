@@ -37,7 +37,7 @@
 	<div id="currentlocation">	
 		<div class="container_16">
 			<div class="grid_16">
-				<h6><%= t 'location', :location => session[:geo_location].city, :state => session[:geo_location].state %> 
+				<h6><%= t 'location', :location => "#{Location.new(session[:geo_location].city, session[:geo_location].state, 'ES').to_s}" %> 
 					<%= link_to 'Cambiar', :edit_location %></h6>
 				</div>
 			<div class="clear"></div>

@@ -32,3 +32,9 @@ Wantatoy::Application.configure do
     
 end
 
+class ActionDispatch::Request
+  def remote_ip
+    '91.121.87.65' # FRANCE
+    # '77.224.233.165' # BILBAO
+  end
+end

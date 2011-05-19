@@ -12,6 +12,7 @@
 	<div class="container_16">				
 		<div class="grid_8">
 			<ul class="step-list">
+				<li>&nbsp;</li>
 				<li>
 					<div class="number">1</div>
 					<div class="explain"><%= t 'new_toy1'%></div>
@@ -23,7 +24,7 @@
 				<li>
 					<div class="number">3</div>
 					<div class="explain"><%= t 'new_toy3'%></div>
-					<div class="explain"><%= t 'new_toy4'%></div>
+					<%= t 'new_toy4'%>
 				</p></li>
 				<li>
 					<div class="number">4</div>
@@ -33,13 +34,14 @@
 		</div>
 		<div class="grid_8">
 			<% if (@toy.errors.any?) %>
-		    <div id="error_explanation">
+		    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
 		    	<ul>
-		      	<% @toy.errors.each do |attribute, msg| %>
+		      	</br>
+				<% @toy.errors.each do |attribute, msg| %>
 				<% if (attribute == :thumb_file_size)%>
-				<li><%= t 'activerecord.errors.models.toy.attributes.thumb_file_size.toobig'%></li>
+				<li><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><strong><%= t 'activerecord.errors.models.toy.attributes.thumb_file_size.toobig'%></strong></li>
 				<% elsif (attribute != :thumb)%>
-		        <li><%= msg %></li>
+		        <li><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><strong><%= msg %></strong></li>
 				<% end %>
 		      	<% end %>
 		      	</ul>
@@ -51,9 +53,9 @@
 	</div>
 </div>
 <div id="new_toy_modal">
-	<span><%= t 'toy_modal_body1'%></span></br>
-	<span><%= image_tag "ajax-loader.gif"%></span></br>
-	<span><%= t 'toy_modal_body2'%></span></br>
+	<div class="modal"><span><%= t 'toy_modal_body1'%></span></br></div>
+	<div class="modal"><span><%= image_tag "ajax-loader.gif", :size => "270x50"%></span></br></div>
+	<div class="modal"><span><%= t 'toy_modal_body2'%></span></br></div>
 </div>
 
 <script type="text/javascript">
@@ -70,7 +72,7 @@ $(window).resize(function() {
 });
 function init(){
 	$('#toy_description').limit('255','#charsLeft');
-	$('input[type=submit]').button();
+	$('#toy_submit').button();
     $('#toy_title').focus();
     if ($('#error_explanation').is (':visible')) {
       $('#form').show(1);
@@ -83,13 +85,13 @@ function initDialogBox(){
 		title: "<%= t 'toy_modal_header'%>",
 		modal: true,
 		height: 250,
-		width: 400,
+		width: 350,
 		resizable: false,
 		autoResize: true,
 		disabled: true,
 		draggable: false,
-		//autoOpen: false,
-		//closeOnEscape: false,
+		autoOpen: false,
+		closeOnEscape: false,
 		show: 'explode',
 		hide: 'blind',
 		open: function(event, ui) { $(".ui-dialog-titlebar-close").hide(); } //getting out de cross on the title

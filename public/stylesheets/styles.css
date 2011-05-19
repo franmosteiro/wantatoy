@@ -1,5 +1,5 @@
 html,body {margin:0;padding:0;height:100%;letter-spacing:-0.03em;}
-body{background-color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial;height: 100%;}
+body{background-color:#ffffff;font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;height: 100%;}
 div#header {background:#333333;}
 div#header h1{color:#ffffff;}
 div#location{background:#EC5810;height:40px;color:#3EBAF7;text-align:right;}
@@ -92,7 +92,7 @@ ul.step-list {
     padding-left: 40px;
 }
 .step-list li .number {
-    background: url("../images/circle_orange.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/orange-circle.gif") no-repeat scroll 0 0 transparent;
     color: #FFFFFF;
     display: inline;
     float: left;
@@ -102,4 +102,19 @@ ul.step-list {
     margin-left: -40px;
     text-align: center;
     width: 23px;
+}
+.step-list li .explain {
+    background-color: transparent;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin-bottom: 0.3em;
+}
+/* Inside modal styles*/
+div.modal {
+	text-align: center;
+}
+.modal span{
+	font-size:1em;
+	text-align: center;
+	display: inline;
 }

@@ -1,38 +1,39 @@
 <div class="container_16">
 	<div class="grid_16">
 		<div id="highlight">
-		<h2><%= t 'page_title.search'%></h2>
-		<p><%= t 'page_description.search'%></p>		
+			<h2><%= t 'page_title.search'%></h2>
+			<p><%= t 'page_description.search'%></p>		
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
 <div id="grid">
 	<div class="container_16">
-	<% if (@toys.size == 0)%>
-	<div class="grid_16"><h1><%= t 'no_toy_found'%></h1></div>
-	<div class="clear"></div>
-	<%else%>
-	<% @toys.each_with_index do |toy,index| %>
-		<%if ((@toys.size == index + 1) and ((index+1)%4 != 0))%>
-	    <div class="grid_4 suffix_<%=(4-((index+1)%4))*4%>">
-	    <%else%>
-	    <div class="grid_4">
-	    <%end%>
-	    	<div class="box">
-	        	<div class="thumb">
-	              <%= link_to image_tag(toy.thumb.url(:medium)), toy %>
-				  <%= link_to toy, {:class => "gallery-over"} do  %>
-				  	<strong><%= toy.title %></strong>
-					<span class="dim"><%= toy.location %>, <%= toy.state %></span>
-				  <%end%>
-	            </div>
-	        </div>
-	    </div>
-	    <%if (@toys.size == index + 1)%><div class="clear"></div><%end%>
-	<%end%>
-	<%end%>
-	<div class="grid_16"><%= will_paginate @toys %></div>
-	<div class="clear"></div>	
+		<% if (@toys.size == 0)%>
+			<div class="grid_16"><h1><%= t 'no_toy_found'%></h1></div>
+			<div class="clear"></div>
+		<%else%>
+			<% @toys.each_with_index do |toy,index| %>
+				<%if ((@toys.size == index + 1) and ((index+1)%4 != 0))%>
+					<div class="grid_4 suffix_<%=(4-((index+1)%4))*4%>">
+				<%else%>
+					<div class="grid_4">
+				<%end%>
+						<div class="box">
+							<div class="thumb">
+								<%= link_to image_tag(toy.thumb.url(:medium)), toy %>
+								<%= link_to toy, {:class => "gallery-over"} do  %>
+									<strong><%= toy.title %></strong>
+									<span class="dim"><%= toy.location %>, <%= toy.state %></span>
+								<%end%>
+							</div>
+						</div>
+					</div>
+				<%if (@toys.size == index + 1)%><div class="clear"></div>
+				<%end%>
+			<%end%>
+		<%end%>
+		<div class="grid_16"><%= will_paginate @toys %></div>
+		<div class="clear"></div>	
 	</div>
 </div>

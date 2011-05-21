@@ -63,23 +63,26 @@ $(document).ready(function(){
   init();
   initDialogBox();
 });
-$('#form').submit(function(){
-  $('#toy_submit').attr("value", "<%= t 'toy_submit_new2'%>");
-  $( "#new_toy_modal" ).dialog('open');
-});
-$(window).resize(function() {
-    $("#new_toy_modal").dialog("option", "position", "center");
-});
+
 function init(){
 	$('#toy_description').limit('255','#charsLeft');
 	$('#toy_submit').button();
     $('#toy_title').focus();
+
     if ($('#error_explanation').is (':visible')) {
       $('#form').show(1);
       $('#contact_email').focus();
     }
 }
 function initDialogBox(){
+	$('#form').submit(function(){
+	  $('#toy_submit').attr("value", "<%= t 'toy_submit_new2'%>").addClass("ui-state-disabled");
+	  $( "#new_toy_modal" ).dialog('open');
+	});
+	$(window).resize(function() {
+		$("#new_toy_modal").dialog("option", "position", "center");
+	});
+	
 	$( "#dialog:ui-dialog" ).dialog( "destroy" );
 	$( "#new_toy_modal" ).dialog({
 		title: "<%= t 'toy_modal_header'%>",

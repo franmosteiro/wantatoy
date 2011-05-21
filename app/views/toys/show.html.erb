@@ -4,29 +4,30 @@
 			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
 		</div>
 		<div class="grid_8">
-			<%= link_to t('link_back'), toys_path(:page => session[:page])%>
+			<%= link_to t('link_back'), toys_path(:page => session[:page]) , :class => "fg-button ui-state-default ui-corner-all", :id => "back2index" %>
+			</br>&nbsp;</br>
 			<h1><%= @toy.title %></h1>
 			<h5><%= @toy.location %>, <%= @toy.state %></h5>			
 			<p><%= @toy.description %></p>
 			<%if (notice.nil?)%>
 				<h6><%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a></h6>
 			<% else %>
-			<div id="confirm">
-			<h1><%= notice %></h1>
-			</div>
+				<div id="confirm">
+					<h1><%= notice %></h1>
+				</div>
 			<% end %>
 						
 			<div id="form">
 				 <% if (@contact && @contact.errors.any?) %>
-				<div id="error_explanation">
-				<% @contact.errors.each do |attribute, msg| %>
-				<%= msg %>
-				<% end %>
-				</div>
+					<div id="error_explanation">
+						<% @contact.errors.each do |attribute, msg| %>
+							<%= msg %>
+						<% end %>
+					</div>
 				<% end %>	
 				<%= form_for [@toy, @contact] do |f| %>
-				<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
-				<%= f.submit t('button_ok'), :class => "button" %>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
+					<%= f.email_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
+					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" class="fg-button ui-state-default ui-corner-all" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>
 		</div>	
@@ -36,44 +37,75 @@
 <div id="grid">
 	<div class="container_16">
 		<%if (@rest_toys.size > 0)%>
-		<div class="grid_16"><h6><%= t 'other_toys'%></h6></div>
-		<div class="clear"></div>
-		<% @rest_toys.each_with_index do |toy,index| %>
-		<%if ((@rest_toys.size == index + 1) and ((index+1)%8 != 0))%>
-		<div class="grid_2 suffix_<%=16-(((index+1)%8)*2)%>">
-		<%else%>
-		<div class="grid_2">
-		<%end%>
-			<div class="borderboxmini">
-			<%= link_to image_tag(toy.thumb.url(:small)), toy %>
-			</div>
-		</div>
-		<%if (@rest_toys.size == index + 1)%><div class="clear"></div><%end%>
-		<%end%>
+			<div class="grid_16"><h6><%= t 'other_toys'%></h6></div>
+				<div class="clear"></div>
+			<% @rest_toys.each_with_index do |toy,index| %>
+				<%if ((@rest_toys.size == index + 1) and ((index+1)%4 != 0))%>
+					<div class="grid_3 suffix_<%=(6-((index+1)%6))*6%>">
+				<%else%>
+					<div class="grid_3">
+				<%end%>
+							<div class="box_mini">
+								<div class="thumb_mini">
+									<%= link_to image_tag(toy.thumb.url(:small)), toy %>
+									<%= link_to toy, {:class => "gallery-over"} do  %>
+										<strong><%= toy.title %></strong>
+										<span class="dim"><%= toy.location %></span>
+									<%end%>
+								</div>
+							</div>
+						</div>
+						<%if (@rest_toys.size == index + 1)%><div class="clear"></div>
+				<%end%>
+			<%end%>
 		<%end%>
     </div>
 </div>
+
 <script type="text/javascript">
 $(document).ready(function(){
-  $('#contact_email').focus();	
-  $('#contact_link').click(
-    function(){
-      $('#form').show(10);
-      $('#contact_email').val('');
-      $('#contact_email').focus();
-    }
-  );
-  $('#cancel_link').click(
-    function(){
-      $('#form').hide(10);
-      $('#error_explanation').hide();
-    }
-  );
-  if ($('#error_explanation').is (':visible')) {
-	$('#form').show(1);
-	$('#contact_email').focus();
-  } else {
-	$('#form').hide(0);
-}
+	if ($('#error_explanation').is (':visible')) {
+		$('#form').show(1);
+		$('#contact_email').focus();
+	} else 
+		$('#form').hide(0);
+	init();
+  
+	function init(){
+		$('#contact_email').focus();	
+		$('#contact_link').click(function(){
+		  $('#form').slideDown();
+		  $('#contact_email').val('');
+		  $('#contact_email').focus();
+		});
+		$('#cancel_link').click(function(){
+		  $('#form').slideUp();
+		  $('#error_explanation').hide();
+		});
+		$('#contact_submit').hover(
+			function(){ 
+				$(this).addClass("ui-state-hover"); 
+			},
+			function(){ 
+				$(this).removeClass("ui-state-hover"); 
+			}
+		);
+		$('#cancel_link').hover(
+			function(){ 
+				$(this).addClass("ui-state-hover"); 
+			},
+			function(){ 
+				$(this).removeClass("ui-state-hover"); 
+			}
+		);
+		$('#back2index').hover(
+			function(){ 
+				$(this).addClass("ui-state-hover"); 
+			},
+			function(){ 
+				$(this).removeClass("ui-state-hover"); 
+			}
+		);
+	}
 });
 </script>

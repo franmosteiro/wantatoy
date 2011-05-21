@@ -24,7 +24,7 @@ class Toy < ActiveRecord::Base
   validates :description, :presence => true, :length => { :maximum => 255 }
   validates :contact, :email_pattern => true, :length => { :maximum => 40 }
   validates_attachment_presence :thumb
-  validates_attachment_content_type :thumb, :content_type => ['image/jpeg', 'image/png', 'image/gif'], :message => :not_valid
+  validates_attachment_content_type :thumb, :content_type => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'image/bmp','image/pjpeg', 'image/x-png'], :message => :not_valid
   validates_attachment_size :thumb, :less_than => 3.megabytes
   
   acts_as_mappable :default_units => :kms,

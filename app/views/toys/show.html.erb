@@ -16,15 +16,17 @@
 					<h1><%= notice %></h1>
 				</div>
 			<% end %>
-						
-			<div id="form">
-				 <% if (@contact && @contact.errors.any?) %>
-					<div id="error_explanation">
+			<% if (@contact && @contact.errors.any?) %>
+					<div id="error" class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+						<ul>
+							</br>
 						<% @contact.errors.each do |attribute, msg| %>
-							<%= msg %>
+							<li><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><strong><%= msg %></strong></li>
 						<% end %>
+						</ul>
 					</div>
-				<% end %>	
+				<% end %>			
+			<div id="form">	
 				<%= form_for [@toy, @contact] do |f| %>
 					<%= f.email_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
 					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" class="fg-button ui-state-default ui-corner-all" id="cancel_link"><%= t('link_cancel')%></a>	
@@ -64,7 +66,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	if ($('#error_explanation').is (':visible')) {
+	if ($('#error').is (':visible')) {
 		$('#form').show(1);
 		$('#contact_email').focus();
 	} else 
@@ -80,7 +82,7 @@ $(document).ready(function(){
 		});
 		$('#cancel_link').click(function(){
 		  $('#form').slideUp();
-		  $('#error_explanation').hide();
+		  $('#error').hide();
 		});
 		$('#contact_submit').hover(
 			function(){ 

@@ -9,7 +9,7 @@
 	<div class="grid_8 suffix_8">
 		<% form_tag 'location', :method => 'post', :id =>"form" do %>
 		<%= text_field_tag 'location', @location, {:id => "location", :class=>"input medium"}%>
-		<%= submit_tag t('button_ok') %>
+		<%= submit_tag t('button_ok'), :class => "fg-button ui-state-default ui-corner-all", :id => "submit_loc" %>
 		<% end %>
 	</div>
 	<div class="clear"></div>
@@ -17,5 +17,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#location').focus();
+	$('#submit_loc').hover(
+		function(){ 
+			$(this).addClass("ui-state-hover"); 
+		},
+		function(){ 
+			$(this).removeClass("ui-state-hover"); 
+		}
+	);
 });
 </script>

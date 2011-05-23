@@ -44,9 +44,6 @@ class ToysController < ApplicationController
     @toy.lat = session[:geo_location].lat
     @toy.lng = session[:geo_location].lng
     @toy.location = session[:geo_location].city
-    logger.debug "(1)#{session[:geo_location].state}"
-    logger.debug "(2)#{Location::STATES[session[:geo_location].state.to_sym]}"
-    logger.debug "(3)#{Location::STATES[session[:geo_location].state.to_sym].nil?}"
     @toy.state = "#{Location::STATES[session[:geo_location].state.to_sym] or session[:geo_location].state}"
     respond_to do |format|
       if (@toy.save)
@@ -111,7 +108,7 @@ class ToysController < ApplicationController
       end
       client = Twitter::Client.new
       # Post a tweet ;)
-      client.update("#{toy.title} #{toy.location} http://#{request.host}/toys/#{toy.permalink} #juguetea")
+      client.update("#{toy.title} en #{toy.location}, #{toy.state} http://#{request.host}/toys/#{toy.permalink} #juguetea #juguetes #gratis")
     end
   end  
          

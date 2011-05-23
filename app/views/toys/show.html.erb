@@ -28,7 +28,7 @@
 				<% end %>			
 			<div id="form">	
 				<%= form_for [@toy, @contact] do |f| %>
-					<%= f.email_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
+					<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
 					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" class="fg-button ui-state-default ui-corner-all" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>

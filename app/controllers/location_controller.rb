@@ -16,12 +16,6 @@ class LocationController < ApplicationController
       if (@geolocation.success)
         @location = Location.new(@geolocation.city, @geolocation.state, @geolocation.country_code)
         if (@location.valid?)
-          # TODO Muchas veces realiza la localización por aproximación, es decir,
-          # localiza un pueblo más importante cerca y toma su nombre. 
-          # Es posible entonces que la ciudad localizada no coincida con lo que
-          # introducido el usuario. Habría que mostar un mensaje tipo "Estas cerca de..."
-          # o incluir lo que el usuario ha introducido en la localización.
-          @geolocation.city = "#{params[:location]} (#{@geolocation.city})" if !@geolocation.city.eql? params[:location].capitalize
           session[:geo_location] = @geolocation
           redirect_to :controller => 'toys', :action =>'index'                    
         else

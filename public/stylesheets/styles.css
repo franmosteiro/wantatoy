@@ -29,24 +29,24 @@ ul#nav li a:hover {color:#ffffff;}
 
 /* * * Grid imagenes * * */
 #grid{margin:20px 0 20px 0;}
-div.thumb {height:200px;overflow:hidden;width:200px;}
-div.thumb_mini {height:100px;overflow:hidden;width:100px;}
+div.thumb {width:200px;height:200px;overflow:hidden;}
+div.thumb_mini {width:90px;height:90px;overflow:hidden;}
 .box{clear:left;overflow:hidden;padding:0 0 10px;position:relative;}
-.box_mini{clear:left;overflow:hidden;padding:0 0 10px;position:relative;}
+.box_mini{clear:left;overflow:hidden;padding:0 0 5px;position:relative;}
 .thumb{background:#fff;border:1px solid #E0E3DC;margin:0px;padding:9px;}
-.thumb_mini{background:#fff;border:1px solid #E0E3DC;margin:0px;padding:9px;}
+.thumb_mini{background:#fff;border:1px solid #E0E3DC;margin-top:5px;padding:4px;}
 .borderbox{background:#fff;border:1px solid #E0E3DC;margin:0px;padding:9px;}
-.borderboxmini{background:#fff;border:1px solid #E0E3DC;margin-top:10px;padding:0px;}
+/*.borderboxmini{background:#fff;border:1px solid #E0E3DC;margin-top:10px;padding:9px;}*/
 
 /* * * Tooltip effect * * */
 div.box a.gallery-over {-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;color:#888888;font-size:0.8em;
-height:130px;left:10px;line-height:2em;padding:10px;margin:0;opacity:0;position:absolute;text-decoration:none;top:10px;width:180px;}
+height:180px;left:10px;line-height:2em;padding:10px;margin:0;opacity:0;position:absolute;text-decoration:none;top:10px;width:180px;}
 div.box a.gallery-over strong {color:#109DD8;display:block;font-size:1.4em;font-weight:bold;line-height:1.2em;margin:0;}
 div.box a.gallery-over span.dim {color:#666666;font-weight:bold;}
 
-div.box_mini a.gallery-over {-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;color:#888888;font-size:0.8em;
-height:100px;left:10px;line-height:2em;margin:0;opacity:0;position:absolute;text-decoration:none;top:10px;width:100px;}
-div.box_mini a.gallery-over strong {color:#109DD8;display:block;font-size:1.4em;font-weight:bold;line-height:1.2em;margin:0;}
+div.box_mini a.gallery-over {-moz-background-clip:border;-moz-background-inline-policy:continuous;-moz-background-origin:padding;color:#888888;font-size:0.7em;
+height:80px;left:10px;line-height:2em;margin:0;opacity:0;position:absolute;text-decoration:none;top:10px;width:80px;}
+div.box_mini a.gallery-over strong {color:#109DD8;display:block;font-size:1.2em;font-weight:bold;line-height:1.2em;margin:0;}
 
 /* * * Validation messages * * */
 div#error_explanation{color:red;font-size:1.2em;padding:10px 0 0 0;margin:0;}

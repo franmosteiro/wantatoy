@@ -11,7 +11,7 @@ class Toy < ActiveRecord::Base
 	:styles => { 
 			:large => ["438x438!", :png], 
 			:medium => ["198x198!", :png], 
-			:small => ["98x98!", :png] 
+			:small => ["88x88!", :png] 
 	},
 	:storage => :s3,
 	:s3_credentials => Rails.root.join('config/s3.yml').to_s,

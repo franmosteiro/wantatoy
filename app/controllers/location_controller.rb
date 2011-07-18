@@ -6,13 +6,7 @@ class LocationController < ApplicationController
       
   def edit
     if (request.method.eql? 'POST')
-      # TODO Habría que quitar las palabras España, Spain, Espagne...del parámetro de entrada
-      # TODO Capturar la excepción: Probar con "lisboa"
-      begin
-        @geolocation = MultiGeocoder.geocode("#{params[:location]}, ES")
-      rescue ActionDispatch::Cookies::CookieOverflow
-        logger.debug "***EXCEPTION 2***"
-      end
+      @geolocation = MultiGeocoder.geocode("#{params[:location]}, ES")
       if (@geolocation.success)
         @location = Location.new(@geolocation.city, @geolocation.state, @geolocation.country_code)
         if (@location.valid?)

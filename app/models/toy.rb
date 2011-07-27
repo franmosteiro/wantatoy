@@ -64,12 +64,25 @@ class Toy < ActiveRecord::Base
     permalink
   end         
   
-  
+  alias_method :ar_to_xml, :to_xml
+  def to_xml(options = {})
+    default_except = [
+      :activation_token,
+      :cancelation_token,
+      :contact,
+      :id,
+      :created_at,
+      :updated_at
+    ]
+    options[:except] = (options[:except] ? options[:except] + default_except : default_except)
+    self.ar_to_xml( options )
+  end  
   private
   
   def generate_tokens
     self.activation_token = ActiveSupport::SecureRandom.base64(25).gsub("/","_").gsub(/=+$/,"")
     self.cancelation_token = ActiveSupport::SecureRandom.base64(25).gsub("/","_").gsub(/=+$/,"")
-  end     
+  end 
+      
       
 end

@@ -4,7 +4,7 @@
 			<div class="borderbox"><%= image_tag @toy.thumb.url(:large) %></div>
 		</div>
 		<div class="grid_8">
-			<%= link_to t('link_back'), toys_path(:page => session[:page]) , :class => "fg-button ui-state-default ui-corner-all", :id => "back2index" %>
+			<%= link_to t('link_back'), toys_path(:page => session[:page]) , :id => "back2index" %>
 			</br>&nbsp;</br>
 			<h1><%= @toy.title %></h1>
 			<h5><%= @toy.location %>, <%= @toy.state %></h5>			
@@ -29,7 +29,7 @@
 			<div id="form">	
 				<%= form_for [@toy, @contact] do |f| %>
 					<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
-					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" class="fg-button ui-state-default ui-corner-all" id="cancel_link"><%= t('link_cancel')%></a>	
+					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
 				<% end %>
 			</div>
 		</div>	

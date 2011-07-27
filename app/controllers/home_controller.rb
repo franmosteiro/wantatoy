@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @toys = Toy.list_last_toys(session[:geo_location].lat, session[:geo_location].lng)
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @toys }
+      format.xml  { render :xml => @toys  }
     end
   end
 

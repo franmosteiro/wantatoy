@@ -71,7 +71,7 @@ class ToysController < ApplicationController
       post_tweet(toy)
       flash[:title] = t('notice.toy_activated.title')
       flash[:desc] = t('notice.toy_activated.description')
-      render :action => "message"
+      redirect_to :action => "message"
     else
       redirect_to :action => 'index'
     end

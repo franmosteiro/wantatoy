@@ -22,7 +22,7 @@
       home: Esta iniciativa pretende impulsar un uso más razonable de los juguetes que regalamos a nuestros niños. La mayoría de ellos tienen más juguetes de los que pueden disfrutar y en muchas ocasiones quedán relegados por otros nuevos estando practicamente nuevos.
       home2: Seguro que tu también tienes muchos juguetes olvidados en casa que otros pueden continuar disfrutando. Puede que incluso encuentres uno con el que te gustaría jugar. Anímate y participa.
       search: Seguro que te gustaría jugar con alguno de estos juguetes. ¿Porque no lo pides?
-      new: Regala esos juguetes con los que ya no juegas y verás como haces felíz a otro niño
+      new: Regala ese juguete con el que ya no juegas y verás como haces felíz a otro niño
       location: Indicanos el nombre de tu localidad, municipio o ciudad y te mostraremos los juguetes más cercanos a tu zona
                     
   footer:
@@ -74,8 +74,8 @@
         title: Cambia tu localidad
         description: Lo sentimos mucho, por ahora solo estamos llevando a cabo esta iniciativa en territorio español.
     improve_location:
-        title: No podemos localizarte
-        description: Indicanos tu localidad y provincia para ayudarnos a localizarte mejor.
+        title: Ups, no podemos localizarte
+        description: Indicanos tu localidad y provincia para ayudarnos a localizarte mejor y mostrarte los juguetes más cercanos a tu zona.
     
   # Action View
   number:

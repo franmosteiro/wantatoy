@@ -10,7 +10,7 @@
 			<h5><%= @toy.location %>, <%= @toy.state %></h5>			
 			<p><%= @toy.description %></p>
 			<%if (notice.nil?)%>
-				<h6><%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a></h6>
+				<span class="h"><%= t 'interested'%>&nbsp;<a href="javascript:void(0);" id="contact_link"><%= t('link_want_it')%></a></span>
 			<% else %>
 				<div id="confirm">
 					<h1><%= notice %></h1>
@@ -29,7 +29,7 @@
 			<div id="form">	
 				<%= form_for [@toy, @contact] do |f| %>
 					<%= f.text_field :email, :maxlength => 40, :class=>"input medium contact_textfield" %>
-					<%= f.submit t('button_ok'), :class => "fg-button ui-state-default ui-corner-all" %>&nbsp;&nbsp;<a href="javascript:void(0);" id="cancel_link"><%= t('link_cancel')%></a>	
+					<%= f.submit t('button_ok'), :class => "button ui-button ui-widget ui-state-default ui-corner-all ui-state-hover" %>
 				<% end %>
 			</div>
 		</div>	
@@ -66,8 +66,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	if ($('#error').is (':visible')) {
-		$('#form').show(1);
+		$('#form').show(1);		
 		$('#contact_email').focus();
+		$('#contact_link').html('<%= t('link_cancel')%>');
 	} else 
 		$('#form').hide(0);
 	init();
@@ -75,31 +76,22 @@ $(document).ready(function(){
 	function init(){
 		$('#contact_email').focus();	
 		$('#contact_link').click(function(){
-		  $('#form').slideDown();
-		  $('#contact_email').val('');
-		  $('#contact_email').focus();
+			if ($('#contact_link').html() == '<%= t("link_cancel")%>') {
+				$('#contact_link').html('<%= t('link_want_it')%>');
+			  	$('#form').slideUp();
+			  	$('#error').hide();				
+			} else {
+				$('#contact_link').html('<%= t('link_cancel')%>');
+				$('#form').slideDown();
+			  	$('#contact_email').val('');
+			  	$('#contact_email').focus();				
+			}
 		});
 		$('#cancel_link').click(function(){
-		  $('#form').slideUp();
-		  $('#error').hide();
+		  	$('#form').slideUp();
+		  	$('#error').hide();
 		});
 		$('#contact_submit').hover(
-			function(){ 
-				$(this).addClass("ui-state-hover"); 
-			},
-			function(){ 
-				$(this).removeClass("ui-state-hover"); 
-			}
-		);
-		$('#cancel_link').hover(
-			function(){ 
-				$(this).addClass("ui-state-hover"); 
-			},
-			function(){ 
-				$(this).removeClass("ui-state-hover"); 
-			}
-		);
-		$('#back2index').hover(
 			function(){ 
 				$(this).addClass("ui-state-hover"); 
 			},

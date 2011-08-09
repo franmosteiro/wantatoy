@@ -67,6 +67,7 @@ $(document).ready(function(){
 function init(){
 	$('#toy_description').limit('255','#charsLeft');
 	$('#toy_submit').button();
+	$('#toy_submit').addClass('button');
     $('#toy_title').focus();
 
     if ($('#error_explanation').is (':visible')) {

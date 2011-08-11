@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
       Notifier.contact(@toy, @contact.email).deliver()
       redirect_to(@toy, :notice => t('notice.new_contact_added'))
     else
-      @rest_toys = Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng)
+      @rest_toys = Toy.list_rest_toys(@toy, 0, session[:geo_location].lat, session[:geo_location].lng)
       render :action => 'toys/show'
     end
   end

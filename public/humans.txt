@@ -1,11 +1,28 @@
 /* TEAM */
 Developer:	Alex Epelde
+Site: juguetea.org
+Twitter: @epelde
+Location: Bilbao, Basque Country.
+
 Developer:	Fran Mosteiro
+Site: juguetea.org / franmosteiro.tumblr.com
+Twitter: @fran_mosteiro
+Location: Bilbao, Basque Country.
+
+
+
+/* SITE */
+Url: juguetea.org
+Blog: blog.juguetea.org
 Contact: 	admin[at]juguetea[dot]org
 Twitter: 	@jugutea_org
 
-/* SITE */
-Last update:	2011/04/01
+Last update: 2011/07/23
+Platform: Rails 3
+Components: HTML, CSS, jquery, Rails 3, AWS S3, PostgresSQL
+Software: TextMate, Notepad++
 Language:	Spanish (Spain)
 Doctype:	XHTML 1.0 Strict
-Tools:	HTML, CSS, jquery, Rails
+							
+/* THANKS */
+Our Families: We love you all !!!

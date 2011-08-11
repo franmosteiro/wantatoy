@@ -4,7 +4,7 @@ class ToysController < ApplicationController
   # GET /toys.xml
   def index    
     session[:page] = params[:page] || 1
-    @toys = Toy.list_toys(session[:page], session[:geo_location].lat, session[:geo_location].lng)
+    @toys = Toy.list_toys(session[:page], 0, session[:geo_location].lat, session[:geo_location].lng)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @toys }
@@ -17,7 +17,7 @@ class ToysController < ApplicationController
     @toy = Toy.get_toy(params[:id])
     if @toy
       @contact = @toy.contacts.new
-      @rest_toys = Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng)
+      @rest_toys = Toy.list_rest_toys(@toy, 0, session[:geo_location].lat, session[:geo_location].lng)
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @toy }
@@ -47,7 +47,7 @@ class ToysController < ApplicationController
     @toy.state = "#{Location::STATES[session[:geo_location].state.to_sym] or session[:geo_location].state}"
     respond_to do |format|
       if (@toy.save)
-        if (Toy.list_rest_toys(@toy, session[:geo_location].lat, session[:geo_location].lng).size == 0) 
+        if (Toy.list_rest_toys(@toy, 0, session[:geo_location].lat, session[:geo_location].lng).size == 0) 
           Notifier.welcome(@toy).deliver()
         else
           Notifier.thanks(@toy).deliver()

@@ -36,8 +36,18 @@ class Toy < ActiveRecord::Base
       16
   end
   
-  def self.list_toys(page, lat, lng)
-      Toy.within(50, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').paginate(:page => page, :per_page => Toy.per_page)
+  def self.list_toys(page, radius, lat, lng)
+	  if radius < 1500
+		  radius += 100
+		  toys = Toy.within(radius, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').paginate(:page => page, :per_page => Toy.per_page)
+		  if toys.size < 10
+			radius += 200
+			toys = Toy.within(radius, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').paginate(:page => page, :per_page => Toy.per_page)
+			self.list_toys(page, radius, lat, lng)
+		  end
+	  else
+		Toy.within(1500, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').paginate(:page => page, :per_page => Toy.per_page)
+	  end
   end  
   
   def self.search_by_activation_token(token)
@@ -48,12 +58,32 @@ class Toy < ActiveRecord::Base
     where("cancelation_token = ?", token).first
   end  
   
-  def self.list_last_toys(lat, lng)
-    Toy.within(50, :origin => [lat, lng]).where("activation_token is null and cancelation_token is not null").order('updated_at DESC').limit(8)
+  def self.list_last_toys(radius, lat, lng)
+    if radius < 1500
+		  radius += 100
+		  toys = Toy.within(radius, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').limit(8)
+		  if toys.size < 10
+			radius += 200
+			toys = Toy.within(radius, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').limit(8)
+			self.list_last_toys(radius, lat, lng)
+		  end
+	else
+		Toy.within(1500, :origin => [lat, lng]).where("activation_token IS NULL and cancelation_token is not null").order('updated_at DESC').limit(8)
+	end
   end  
   
-  def self.list_rest_toys(toy, lat, lng)
-    Toy.within(50, :origin => [lat, lng]).where("contact = ? and activation_token is null and cancelation_token is not null", toy.contact).reject{|t| t.id == toy.id}
+  def self.list_rest_toys(toy, radius, lat, lng)
+	if radius < 1500
+		  radius += 100
+		  toys = Toy.within(radius, :origin => [lat, lng]).where("contact = ? and activation_token is null and cancelation_token is not null", toy.contact).order('updated_at DESC').reject{|t| t.id == toy.id}
+		  if toys.size < 10
+			radius += 200
+			toys = Toy.within(radius, :origin => [lat, lng]).where("contact = ? and activation_token is null and cancelation_token is not null", toy.contact).order('updated_at DESC').reject{|t| t.id == toy.id}
+			self.list_rest_toys(toy, radius, lat, lng)
+		  end
+	else
+		Toy.within(1500, :origin => [lat, lng]).where("contact = ? and activation_token is null and cancelation_token is not null", toy.contact).order('updated_at DESC').reject{|t| t.id == toy.id}
+	end
   end
   
   def self.get_toy(id)
